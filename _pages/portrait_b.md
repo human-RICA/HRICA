@@ -208,7 +208,7 @@ permalink: /portrait_b/
 <div id="app">
 <div class="brain-wrap" ref="brainwrap">
 <!-- <img src="@/assets/brain/dark/brain-bg.png" alt="" height="100%" class="img-bg"> -->
-<img src="../assets/lung/线.png" usemap="#Map" id="imgMap" />
+<img src="../assets/lung/线3.png" usemap="#Map" id="imgMap" />
 <map name="Map" id="Map">
 <!-- Nose -->
 <!-- <area onclick="linFkTo('Nasal cavity', 'Nose and pharynx')" onmouseover="update('Nose', 'Nasal cavity')" -->
@@ -231,6 +231,10 @@ shape="poly">
 <!-- Larynx -->
 <area onclick="linkTo('Larynx')" onmouseover="update('Larynx')" title="Larynx"
 coords="2905,1941,2942,1941,2973,1914,2920,1909" shape="poly">
+
+<!-- Blood -->
+<area onclick="linkTo('Blood')" onmouseover="update('Blood')" title="Blood"
+coords="2492,1566,2942,1941,2973,1914,2920,1909" shape="poly">
 
 <!-- Airway -->
 <area onclick="linkTo('Trachea', 'Airway')" onmouseover="update('Airway', 'Trachea')" title="Trachea"
@@ -255,12 +259,12 @@ shape="poly">
 </map>
 <!-- <img src="@/assets/brain/line.png" alt="" class="organ-img line"> -->
 <div v-if="!activeBrain && !activeLabel">
-<img src="../assets/lung/全景图.png" alt="" class="organ-img" />
+<img src="../assets/lung/全景图2.3.png" alt="" class="organ-img" />
 </div>
 <!-- 各个器官独立的图层 -->
 <div class="Nose">
 <!-- 鼻部全图层 -->
-<img v-show="activeBrain == 'Nose' && activePart(null)" src="../assets/lung/全景图.png" alt="Nose"
+<img v-show="activeBrain == 'Nose' && activePart(null)" src="../assets/lung/全景图2.3.png" alt="Nose"
 class="organ-img">
 <!-- 独立器官图层 -->
 <img v-show="activePart('Nasal cavity')" src="../assets/lung/nasal cavity.png" alt="Nasal cavity"
@@ -270,7 +274,7 @@ class="organ-img">
 
 <div class="Pharynx">
 <!-- 喉部全图层 -->
-<img v-show="activeBrain == 'Pharynx' && activePart(null)" src="../assets/lung/全景图.png" alt="Pharynx"
+<img v-show="activeBrain == 'Pharynx' && activePart(null)" src="../assets/lung/全景图2.3.png" alt="Pharynx"
 class="organ-img">
 <!-- 独立器官图层 -->
 <img v-show="activePart('Nasal pharynx')" src="../assets/lung/nasal pharynx.png" alt="Nasal pharynx"
@@ -286,9 +290,15 @@ class="organ-img">
 class="organ-img">
 </div>
 
+<div class="Blood">
+<!-- 血液图层 -->
+<img v-show="activeBrain == 'Blood' && activePart(null)" src="../assets/lung/Blood.png" alt="Blood"
+class="organ-img">
+</div>
+
 <div class="Airway">
 <!-- 气道全图层 -->
-<img v-show="activeBrain == 'Airway' && activePart(null)" src="../assets/lung/全景图.png" alt="Airway"
+<img v-show="activeBrain == 'Airway' && activePart(null)" src="../assets/lung/全景图2.3.png" alt="Airway"
 class="organ-img">
 <!-- 独立器官图层 -->
 <img v-show="activePart('Trachea')" src="../assets/lung/trachea.png" alt="Trachea" class="organ-img">

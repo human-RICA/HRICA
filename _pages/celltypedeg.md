@@ -1,37 +1,37 @@
 ---
-title: "Brain Cell Atlas - CellTypeDEG"
+title: "Respiratory Local Immune Cell Atlas - CellTypeDEG"
 layout: homelay
-excerpt: "Brain Cell Atlas -- CellTypeDEG"
-permalink: /celltypedeg/
+excerpt: "Respiratory Local Immune Cell Atlas -- CellTypeDEG"
+permalink: /celltypedeg1/
 ---
-<!-- <b>The page is under maintenance</b> -->
-<div class="container">
+<p class="text-center" style="color:#020e65; font-size:20px; ">The page shows the differentially expressed genes (DEGs) of regions in a cell type.</p>
+<!-- <div class="container"> -->
 <!--b style="font-size: 24px; color: #BF5701">
 ATLAS
 </b-->
 <!--div class="shadow p-3 mb-5 bg-white rounded row"-->
-<p><b>Step1</b> Click below to select a target dataset for different analysis.</p>
-<div class="row" style="display: flex; justify-content: space-between;"> <!-- 两端对齐-->
+<!-- <p><b>Step1</b> Click below to select a target dataset for analysis.</p>
+<div class="row" style="display: flex; justify-content: space-between;">
 <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Adult',this)">
 <img src="{{ site.url }}{{ site.baseurl }}/images/homePage/adult-brain.png" class="rounded-circle" />
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F">
+<b style="font-size: 24px; color: #020e65">
 ADULT BRAIN
 </b>
 </p>
 </div>
-</div>
+</div> -->
 
-<div class="col-lg-3 text-center custom-column">
+<!-- <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Fetal',this)">
 <img src="{{ site.url }}{{ site.baseurl }}/images/homePage/fetal-brain.png" class="rounded-circle" />
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F">
+<b style="font-size: 24px; color: #020e65">
 FETAL BRAIN
 </b>
 </p>
@@ -43,7 +43,7 @@ FETAL BRAIN
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F">
+<b style="font-size: 24px; color: #020e65">
 TUMOR
 </b>
 </p>
@@ -55,12 +55,12 @@ TUMOR
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F">
+<b style="font-size: 24px; color: #020e65">
 ORGANOID
 </b>
 </p>
 </div>
-</div>
+</div> -->
 
 
 <!--div class="col-lg-3 text-center">
@@ -75,9 +75,9 @@ ORGANOID
 </p>
 </div>
 </div-->
-
+<!-- 
 </div>
-</div>
+</div> -->
 
 
 <style>
@@ -127,27 +127,23 @@ ORGANOID
         transition: transform 0.3s;
     }
     .photo-card.clicked {
-        border-color: #23265F;
+        border-color: #020e65;
     }
 </style>
 
-
-
-<br>
-<div class="container">
-<p><b>Step2</b> Select the target Cell type.</p>
-  <b style="font-size: 24px; color: #23265F">Expression</b>
+<div class="container" style="width: 800px">
+<p><b>Step1</b> Select the target Cell type.</p>
+  <b style="font-size: 24px; color: #020e65">Expression</b>
   <div id="imageIdContainer"></div>
   <br/>
-  <b style="font-size: 24px; color: #23265F">Celltype</b>
+  <b style="font-size: 24px; color: #020e65">Celltype</b>
   <br>
   <select id="selectBox1" style="width: 400px;" onchange="handleSelectChange();displaySelectedImage()" selectedIndex="0"></select>
   <br/>
-  <!-- <button onclick="displaySelectedImage()">显示选择的照片</button> -->
-  <div class="image-container">
-  <img id="selectedImage" src="" alt="Selected Image">
+  <div id="imageContainer"></div> <!-- 新增的div用于展示图片 -->
 </div>
-</div>
+<br/>
+
 <!-- <div id="imageIdContainer"></div> -->
 <style>
   /* 设置固定宽度 */
@@ -182,83 +178,82 @@ ORGANOID
 </style>
 
 <script>
-  var selectedImageId = null;
-  var selectedOptions = [];
-  var selectedButton = null;
-  var selectBox1 = document.getElementById('selectBox1');
-  var originalOrder = true;
-  var clickedCard = null;
-  function handleClick(imageId,card) {
-    if (clickedCard !== null) {
-    clickedCard.classList.remove("clicked");
-  }
-    card.classList.add("clicked");
-    clickedCard = card;
-    selectedImageId = imageId;
-    selectedOptions = [];
-
-    fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/CellTypeDEG.json')
-      .then(response => response.json())
-      .then(data => {
-        var options = data[imageId];
-        updateSelectBoxOptions('selectBox1', options);
-        handleSelectChange(); // 确保选中第一个选项
-        document.getElementById('imageIdContainer').textContent = 'Atlas: ' + imageId;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-  }
   document.addEventListener('DOMContentLoaded', function() {
-    // 使用setTimeout确保页面完全加载后再执行
-    setTimeout(function() {
-      // 默认选中第一个选项（Adult Brain）
-      var adultButton = document.querySelector('.col-lg-3:first-child .card-clickable');
-      if (adultButton) {
-        console.log('找到Adult按钮，准备点击');
-        adultButton.click();
-      } else {
-        console.log('未找到Adult按钮');
-        // 备用方案：直接调用handleClick函数
-        var firstCard = document.querySelector('.card-clickable');
-        if (firstCard) {
-          handleClick('Adult', firstCard);
-        }
-      }
-    }, 50);
-  })
-  function handleSelectChange() {
     var selectBox1 = document.getElementById('selectBox1');
-    var option1 = selectBox1.options[selectBox1.selectedIndex].value;
-    selectedOptions = [option1];
-    displaySelectedImage();
-  }
+    var imageContainer = document.getElementById('imageContainer');
+    var imageElement = document.createElement('img');
+    imageContainer.appendChild(imageElement);  // 将图片元素添加到指定的div
 
-  function displaySelectedImage() {
-  if (selectedImageId !== null && selectedOptions.length === 1) {
-    var imageName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '.png';
-    var imagePath = 'https://data.braincellatlas.org/volcano/CellTypeDEG/' + imageName;
-    // 在此处显示照片，例如：
-    var imageElement = document.getElementById('selectedImage');
-    imageElement.src = imagePath;
-    console.log('Selected Image:', imagePath);
-  } else {
-    console.log('Please select an image and options.');
-  }
-}
-  function updateSelectBoxOptions(selectBoxId, options) {
-    var selectBox = document.getElementById(selectBoxId);
-    selectBox.innerHTML = generateOptionsHtml(options);
-    if (options.length > 0) {
-        selectBox.value = options[0]; // 默认选中第一个选项
+    // 确保选择框变化时触发 handleSelectChange 函数
+    selectBox1.addEventListener('change', function() {
+      handleSelectChange();
+      displaySelectedImage(selectBox1.value);
+    });
+
+    loadInitialData();
+
+    function loadInitialData() {
+      fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/CellTypeDEG.json')
+        .then(response => response.json())
+        .then(data => {
+          // 获取数据中的第一个键
+          var firstKey = Object.keys(data)[0];
+          var options = data[firstKey] || []; // 使用空数组如果 data[firstKey] 未定义
+
+          // 更新 selectBox1 的选项
+          updateSelectBoxOptions(selectBox1, options);
+
+          if (options.length > 0) {
+            selectBox1.selectedIndex = 0;
+            document.getElementById('imageIdContainer').textContent = 'Atlas: ' + firstKey;
+            handleSelectChange(); // 默认选中第一个选项并显示图片
+            displaySelectedImage(selectBox1.options[0].value); // 默认选中第一个选项并显示图片
+          }
+        })
+        .catch(error => {
+          console.error('Error loading CellTypeDEG.json:', error);
+        });
     }
-  }
-  function generateOptionsHtml(options) {
-    var optionsHtml = '';
-    for (var i = 0; i < options.length; i++) {
-      optionsHtml += '<option value="' + options[i] + '">' + options[i] + '</option>';
+
+    function handleSelectChange() {
+      var option1 = selectBox1.options[selectBox1.selectedIndex].value;
+      displaySelectedImage(option1);
     }
-    return optionsHtml;
-  }
+
+    function displaySelectedImage(optionValue) {
+      if (optionValue) {
+        var encodedOption = encodeURIComponent(optionValue);
+        var imageName = 'Atlas'+'_'+encodedOption + '.png'; // 假设图片名仅由选项值组成
+        var imagePath = '{{ site.url }}{{ site.baseurl }}/images/markerPage/volcano/figures/stacked_violin_/ByCellType/' + imageName;
+        
+        if (imageElement) {
+          imageElement.src = imagePath;
+          console.log('Selected Image:', imagePath);
+          // 设置图片路径和样式
+          imageElement.src = imagePath;
+          imageElement.style.width = '500px'; // 设置宽度
+          imageElement.style.height = 'auto'; // 高度自动调整
+          imageElement.style.display = 'block'; // 设置图片为块级元素
+          imageElement.style.margin = '0 auto'; // 图片居中
+          console.log('Selected Image:', imagePath);
+        }
+      } else {
+        console.log('Please select an image option.');
+      }
+    }
+
+    function updateSelectBoxOptions(selectBox, options) {
+      if (selectBox) {
+        selectBox.innerHTML = generateOptionsHtml(options);
+      }
+    }
+
+    function generateOptionsHtml(options) {
+      var optionsHtml = '';
+      for (var i = 0; i < options.length; i++) {
+        optionsHtml += '<option value="' + options[i] + '">' + options[i] + '</option>';
+      }
+      return optionsHtml;
+    }
+  });
 </script>

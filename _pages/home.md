@@ -1,123 +1,86 @@
 ---
-title: "Brain Cell Atlas - Home"
+title: "Respiratory Local Immune Cell Atlas - Home"
 layout: homelay
-excerpt: "Brain Cell Atlas - Brain Data Centre: Facilitating Brain Disease Research with big data"
+excerpt: "Respiratory Local Immune Cell Atlas - Developmental Lung Data Centre: Facilitating Developmental Lung Research With Big Data"
 sitemap: true
 permalink: /
 ---
+<!-- <div class="container"> -->
+<br>
+<br>
+<p class="text-center" style="color:#020e65; font-size:40px;">Respiratory Local Immune Cell Atlas</p>
+<p class="text-center" style="font-size:20px;">The respiratory local immune atlas provide the dynamic changes of immune cells in human respiratory system across human life-span after born, covering stages of development, maturation, and aging. 
+</p>
+<div class="wrapper box_style">
+<div class="well" style="border: 0px solid #C9C9C9; background-color: #fff;">
+<section class="sectiontitle"> 
+<div>
+<div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" >
+    <!-- Menu -->
+<ol class="carousel-indicators">
+<li data-target="#carousel" data-slide-to="0" class="active"></li>
+<li data-target="#carousel" data-slide-to="1"></li>
+<li data-target="#carousel" data-slide-to="2"></li>
+<li data-target="#carousel" data-slide-to="3"></li>
+<li data-target="#carousel" data-slide-to="4"></li>
+<li data-target="#carousel" data-slide-to="5"></li>        
+</ol>
 
-<div style="text-align:center; margin-top:0; background-color:yellow;">
-<a href="https://www.braincellatlas.org/index" style="color:#23265F; font-size:30px;">Click here to get access to Brain Cell Atlas web portal version 1.0</a>
+<div class="carousel-inner" markdown="0">
+<div class="item active">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/age.png" alt="Slide 1" style=" width:1150px; height:300px;object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
 </div>
+<div class="item ">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/celltype_age_proportion.png" alt="Slide 2" style=" width:600px; height:300px;object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
+</div>
+ <div class="item">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/marker.png" alt="Slide 2" style=" width:900px;  height:300px;object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
+</div>
+<div class="item">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/celltype_age_relation.png" alt="Slide 3" style="width:1150px; height:300px;object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
+</div>
+<!--<div class="item">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/age.png
+" alt="Slide 4" style=" width:1000px; object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
+</div>
+<div class="item">
+<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/age.png
+" alt="Slide 4" style=" width:1000px; object-fit: cover;border-radius:0%;display: block; margin: 0 auto;"/>
+</div>  -->
+</div>
+<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<br>
+</div>
+<!-- style -->
+<style>
+.wrapper.box_style.line {
+border-width: 0;
+}
+</style>
+
+
+
 <br/>
-<br/>
-<br/>
-
-<div class="container">
-<div class="row" style="display: flex; justify-content: space-between; width: 100%"> <!-- 两端对齐-->
-<div class="col-lg-3 text-center custom-column">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Adult.png'); return false">
-<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/adult-brain.png" class="rounded-circle" />
-</a>
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Adult.png'); return false">ADULT BRAIN</a>
-</b>
-</p>
-</div>
-</div>
-
-
-<div class="col-lg-3 text-center custom-column">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Fetal.png'); return false">
-<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/fetal-brain.png" class="rounded-circle" />
-</a>
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Fetal.png'); return false">FETAL BRAIN</a>
-</b>
-</p>
-</div>
-</div>
-
-
-<div class="col-lg-3 text-center custom-column">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Tumour.png'); return false">
-<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/tumour-brain.png" class="rounded-circle" />
-</a>
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Tumour.png'); return false">TUMOUR</a>
-</b>
-</p>
-</div>
-</div>
-
-<div class="col-lg-3 text-center custom-column">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Organoid.png'); return false">
-<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/drganoid-brain.png" class="rounded-circle" />
-</a>
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Organoid.png'); return false">ORGANOID</a>
-</b>
-</p>
-</div>
-</div>
-
-
-<div class="col-lg-3 text-center custom-column">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick(this)">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Mouse.png'); return false">
-<img src="{{ site.url }}{{ site.baseurl }}/images/homePage/animal-brain.png" class="rounded-circle" />
-</a>
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-<a href="#" onclick="showImage0('{{ site.url }}{{ site.baseurl }}/images/homePage/Mouse.png'); return false">MOUSE BRAIN</a>
-</b>
-</p>
-</div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-<br/><br/><br/>
-
+<p class="text-center" style="color:#020e65; font-size:30px;">The UMAP of Respiratory Local Immune Cell Atlas</p>
 <div class="container">
 <div class="row" >
 <div class="image-container">
-<img id="photo" src="{{ site.url }}{{ site.baseurl }}/images/homePage/Adult.png" alt="Default Photo" style="max-height: 450px;">
+<img id="photo" src="{{ site.url }}{{ site.baseurl }}/images/homePage/umap.png" alt="Default Photo" style="height: 500px; width=500px">
 </div>
 </div>
 </div>
 
-<!-- <h3>Cite us </h3>
-<p>Chen, Xinyue & Huang, Yin & Huang, Ziliang & Xu, Lahong & Huang, Liangfeng & Ye, Mingli & You, Renke & Zhang, Xuegong & Miao, Zhichao*. (2023). Brain Cell Atlas: An Integrative Ensemble of Cell Transcriptomes Across Human Brain Regions. 10.21203/rs.3.rs-3221500/v1.</p>
-<br/> -->
-
-<h3>Cite us </h3>
+<h3 style="color:#020e65">Cite us </h3>
 <div class="left-aligned" style="width: 100%;">
-Xinyue Chen#, Yin Huang#, Liangfeng Huang#, Ziliang Huang#, Zhao-Zhe Hao#, Lahong Xu, Nana Xu, Zhi Li, Yonggao Mou, Mingli Ye, Renke You, Xuegong Zhang, Sheng Liu*, Zhichao Miao*. <br>
-<strong style="color:#23265F;font-weight: bold">A brain cell atlas integrating single-cell transcriptomes across human brain regions. Nat Med (2024). https://doi.org/10.1038/s41591-024-03150-z  .</strong><br>
+Chen, X., Huang, Y., Huang, L. et al. <strong style="color:#020e65;font-weight: bold">A Respiratory Local Immune Cell Atlas integrating single-cell transcriptomes across human brain regions. 10.1038/s41591-024-03150-z.</strong><br>
 <!-- <a> Unpublished</a> -->
 </div>
 
@@ -173,7 +136,7 @@ Xinyue Chen#, Yin Huang#, Liangfeng Huang#, Ziliang Huang#, Zhao-Zhe Hao#, Lahon
         transition: transform 0.3s;
     }
     .photo-card.clicked {
-        border-color: #23265F;
+        border-color: #020e65;
     }
 </style>
 <script>

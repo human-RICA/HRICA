@@ -1,77 +1,35 @@
 ---
-title: "Respiratory Local Immune Cell Atlas - Database"
-layout: textlay
-excerpt: " The Databases in Respiratory Local Immune Cell Atlas, GZNL-RDC. "
-sitemap: true
-permalink: /database/
+title: "Ribocentre-aptamer - Structures"
+layout: default
+excerpt: "Ribocentre-aptamer: A aptamer database"
+sitemap: True
+permalink: /structures/
 ---
-<html lang="en">
+<h1 class="post-title" itemprop="name headline">Sequences</h1>
+Shows the sequence of Riboswitch (Rfam ID for fasta file download). We keep the U in the partial sequence because it is consistent with the sequence information in the fasta file. ( We provide the script could change T into U on the page). <a href="https://www.ribocentre.org/downloads/sequence-T2U.ipynb" target="_blank" download="sequence-T2U.ipynb"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Script</button></a><br><br>
+<html>
 <head>
-<!--set sort order in table header begin-->
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <!-- <title>Ribozyme applications</title> -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!--set sort order in table header finish-->
-  <!-- <style>
-    .header_box {
+<style>
+     .header_box {
     border: none;
     background: #efefef;
     font-size:24px
   }
   h2{
-    font-size:20px;
-    font-weight: bold;
+    font-size:20px
   }
-/* Button Container Styles */
-    .button-container {
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      height: 50px;
-      overflow:auto
-    }
-    /* Button Style */
-    .button {
-      display: block;
-      padding: 10px;
-      margin-right: 10px;
-      text-align: center;
-      background-color: #efefef;
-      color: #020e65;
-      text-decoration: none;
-      font-size: 16px;
-      border: 1px solid #020e65;
-      border-radius: 5px;
-    }
-    /* Mouse Hover Style */
-    .button:hover {
-      background-color: #999;
-      cursor: pointer;
-    }
-    /* 样式表格 */
+    /* tabel style */
     table {
         border: 2px solid #f8f8ff;
         border: 2px solid #767676;
 		    border: 2px solid #767676;
 		    border-radius: 5px;
 		    background-color: #fff;
-		    border-radius: 0;
         }
 		  th {
         background-color: #719B71;
         background-color: #719B71;
-        background-color: #020e65;
+        background-color: #005826;
         color: rgba(255,255,255,0.9);
 		    cursor: pointer;
         }
@@ -81,393 +39,55 @@ permalink: /database/
 		    background-color: #f9f9f9;
 		    }		
 		  th, td {
+		  min-width: 90px;
 		  padding: 10px 10px;
 		}
     /* 隐藏所有 sheet */
     .sheet {
       display: none;
-      overflow:auto
     }
-    /* Style the search box */
-  #searchBox {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    width: 300px;
-  }
-  /* Style the search box when it has focus */
-  #searchBox:focus {
-    outline: none;
-    border-color: #2354C4;
-  }
-  /* Style the placeholder text */
-  #searchBox::placeholder {
-    font-size: 16px;
-  }
-  /* 搜索框和下载框水平布局 */
-    .form-container {
-      display: flex;
-      align-items: center;
-      overflow:auto
+    /*一闪一闪*/
+    .updating-text {
+      animation: updateText 2s infinite;
+      font-weight:bold;
+      color:#005826
     }
-    .form-container input {
-      margin-right: 10px;
+    @keyframes updateText {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.3;
+      }
     }
-    /* 下载框位置设置 */
-    .form-container select {
-      margin-left: auto;
-      padding: 10px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      width: 300px;
-    }
-    .button.clicked {
-    background-color: #999;
-}
+    /*一闪一闪*/
+</style>
+</head>
 
-<!--   </style> -->
-</head> 
-
-<!-- <body onload="showSheet('sheet1')"> -->
-<!-- 
-<p class="header_box" >Detail information</p>
+<div class="sectiontitle" style="border: 1px solid #C9C9C9; background-color: #fff;">
+<p class="header_box" >About sequence in Riboswitch database</p>
+The table below presents the complete collection of currently available sequences from RNAcentre. Click 'download' to obtain the desired target sequence.<br><br>
 
         
-This section lists all the experimentally validated riboswitches. -->
-<div style="text-align: left;">
-<p>You can use keywords to search.</p>
-<input type="text" id="searchBox" placeholder="Search by keyword..." onfocus="showAllSheets()" oninput="searchTables()">
-  <div id="currentSearch" style="font-style: italic; margin-top: 10px;"></div>
-  <br><br>
-</div>
-
-<!-- 引入dashboard专用CSS -->
-<link rel="stylesheet" href="/css/dashboard.css">
-<!-- 引入模块化CSS -->
-<link rel="stylesheet" href="/css/carousel.css">
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/resources.css">
-<link rel="stylesheet" href="/css/stats.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/overview.css">
-<!-- 全局配置变量 -->
-<script>
-    window.DASHBOARD_CONFIG = {
-        baseurl: '{{ site.baseurl }}',
-        dataPath: '{{ site.baseurl }}/apidata/immunedata_cleaned.json'
-    };
-    
-    // 搜索配置 - 可以通过修改这个配置来禁用hero section高度调整
-    window.SEARCH_CONFIG = {
-        disableHeroHeightFix: true, // 设置为 true 可以完全禁用hero section高度调整
-        searchDelay: 300, // 搜索延迟时间（毫秒）
-        minSearchLength: 2 // 最小搜索字符长度
-    };
-    
-    // 如果您想完全禁用hero section高度调整功能，请将上面的 disableHeroHeightFix 设置为 true
-    // 这都是为了防止闪烁。
-</script>
-
-
-<!-- 在搜索框和现有表格之间添加Dashboard Section -->
-<div class="dashboard-section" style="background: #f8f9fa; padding: 40px 0; margin-top: 20px;">
-    <div class="container">
-
-        <div class="amir-container">
-            <div class="chart-container">
-                <!-- 年份分布图表 -->
-                <div class="chart-wrapper">
-                    <div class="chart-header">
-                        <h4 class="chart-title">Publication Trends by Year</h4>
-                        <div class="chart-controls">
-                            <span class="chart-info">Click on bars for filtering</span>
-                        </div>
-                    </div>
-                    <div class="chart-content">
-                        <div id="yearChart" class="amir-chart"></div>
-                    </div>
-                </div>
-                <!-- 疾病分布图表 -->
-                <div class="chart-wrapper">
-                    <div class="chart-header">
-                        <h4 class="chart-title">Disease Distribution</h4>
-                        <div class="chart-controls">
-                            <span class="chart-info">Click on pie sectors for filtering</span>
-                        </div>
-                    </div>
-                    <div class="chart-content">
-                        <div id="diseaseChart" class="amir-chart"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 数据筛选条，移动到柱状图和饼图下方 -->
-            <section class="filter-controls">
-                <div class="filter-header">
-                    <h4 class="filter-title">Data Filtering</h4>
-                    <div class="filter-actions">
-                        <button class="filter-btn reset-btn" id="resetAllFilters">Reset All</button>
-                        <button class="filter-btn export-btn" id="exportData">Export Data</button>
-                    </div>
-                </div>
-                <div class="filter-tags" id="filterTags">
-                    <!-- 筛选标签会动态显示在这里 -->
-                </div>
-            </section>
-
-            <!-- 先放数据详情表 -->
-            <section class="data-table-section">
-                <div class="chart-header">
-                    <h4 class="chart-title">Respiratory local immune data</h4>
-                    <div class="chart-controls">
-                        <span class="chart-info" id="tableInfo">Showing all 240 records</span>
-                    </div>
-                </div>
-                <div class="table-container">
-                    <div class="table-responsive">
-                        <table id="dataTable" class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <!-- 这里是表格的数据的title -->
-                                    <th>DOI</th>
-                                    <th>Name</th>
-                                    <th>Year</th>
-                                    <th>Title</th>
-                                    <th>seq_method</th>
-                                    <th>Accession_code</th>
-                                    <th>Project_ID</th>
-                                    <th>Species</th>
-                                    <th>Donor_status</th>
-                                    <th>Region</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody">
-                                <!-- 表格数据将通过JavaScript动态填充 -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <!-- === 正文内容结束 === -->
-        </div>
-    </div>
-</div>
-
-<!-- 悬浮提示框 -->
-<div class="amir-tooltip" id="amirTooltip">
-    <div class="tooltip-content"></div>
-    <div class="tooltip-arrow"></div>
-</div>
-
-<!-- Dashboard JavaScript -->
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{ site.baseurl }}/js/dashboard-config.js"></script>
-<script src="{{ site.baseurl }}/js/dashboard-main.js"></script>
-<script src="{{ site.baseurl }}/js/dashboard-fluor.js"></script>
-
-<!-- 模块化脚本引入 -->
-<script src="/js/carousel.js"></script>
-<script src="/js/search-utils.js"></script>
-<script src="/js/search.js"></script>
-<script src="/js/stats.js"></script>
-<script src="/js/footer.js"></script>
-
-<!-- 为了全局兼容性，仍然保留这个引用 -->
-<script>
-// 为搜索模块提供关闭功能
-function closeSearchResults() {
-    if (SearchModule && typeof SearchModule.closeSearchResults === 'function') {
-        SearchModule.closeSearchResults();
-    }
-}
-</script>
-
-
-<!-- 统计信息卡片 -->
-<div class="stats-info" style="display: flex; justify-content: space-around; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 20px 0;">
-    <div class="stat-item">
-        <span class="stat-value" id="totalDatasets">240</span>
-        <span class="stat-label">Total Datasets</span>
-    </div>
-    <div class="stat-item">
-        <span class="stat-value" id="uniqueSpecies">2</span>
-        <span class="stat-label">Species</span>
-    </div>
-    <div class="stat-item">
-        <span class="stat-value" id="latestYear">2024</span>
-        <span class="stat-label">Latest Year</span>
-    </div>
-</div>
-
-<style>
-/* Dashboard 样式 */
-.dashboard-section {
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.chart-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.chart-wrapper {
-    flex: 1;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    padding: 15px;
-}
-
-.chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.chart-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #020e65;
-    margin: 0;
-}
-
-.chart-info {
-    font-size: 12px;
-    color: #666;
-}
-
-.amir-chart {
-    height: 250px;
-    width: 100%;
-}
-
-.filter-controls {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.filter-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.filter-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #020e65;
-    margin: 0;
-}
-
-.filter-btn {
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    border: none;
-}
-
-.reset-btn {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.reset-btn:hover {
-    background-color: #e0e0e0;
-}
-
-.filter-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.filter-tag {
-    background: #e0e7ff;
-    color: #020e65;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.filter-tag:hover {
-    background: #d1d9ff;
-}
-
-.stats-info {
-    display: flex;
-    justify-content: space-around;
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-value {
-    display: block;
-    font-size: 24px;
-    font-weight: bold;
-    color: #020e65;
-}
-
-.stat-label {
-    font-size: 14px;
-    color: #666;
-}
-</style>
-
-
-
-<div>
-<p>You can download the tables by clicking on the five buttons below.</p>
-<table id="cfttable" class="table table-hover table-bordered">
-    <colgroup>
-          <col style="width: 5%;">
-          <col style="width: 5%;">
-          <col style="width: 5%;">
-          <col style="width: 20%;">
-          <col style="width: 5%;">
-          <col style="width: 8%;">
-          <col style="width: 5%;">
-          <col style="width: 5%;">
-          <col style="width: 5%;">
-          <col style="width: 5%;">
-          <!-- <col style="width: 5%;"> -->
-        </colgroup>
-        <thead>
-        <tr>
+ <div style="display: flex;overflow:auto">
+ 
+    <table style="flex: 1;">
+      <tr>
         <th onclick="sortTable(0)">DOI</th>
         <th onclick="sortTable(1)">Name</th>
         <th onclick="sortTable(2)">Year</th>
         <th onclick="sortTable(3)">Title</th>
         <th onclick="sortTable(4)">seq_method</th>
-        <th onclick="sortTable(5)">Accession_code</th>
-        <th onclick="sortTable(6)">Project_ID</th>
-        <th onclick="sortTable(7)">Species</th>
-        <th onclick="sortTable(8)">Donor_status</th>
-        <th onclick="sortTable(9)">Region</th>
-
+        <th onclick="sortTable(5)">Download link</th>
+        <th onclick="sortTable(6)">Accession_code</th>
+        <th onclick="sortTable(7)">Project_ID</th>
+        <th onclick="sortTable(8)">Species</th>
+        <th onclick="sortTable(9)">Donor_status</th>
+        <th onclick="sortTable(10)">Region</th>
       </tr>
-        </thead>
-<tbody>
-<tr>
+        
+
+     <tr>
       <td name="td0">10.1038/s41422-020-0374-x</td>
       <td name="td1">Chen et al Cell Research</td>
       <td name="td2">2020</td>
@@ -593,8 +213,8 @@ function closeSearchResults() {
       <td name="td2">2021</td>
       <td name="td3">Signatures of plasticity, metastasis, and immunosuppression in an atlas of human small cell lung cancer</td>
       <td name="td4">scRNA-seq</td>
-      <td name="td6"><a href="https://data.humantumoratlas.org/publications/msk_sclc_chan_2021?tab=scrna-seq" target="_blank" style="color:#020e65"><b>msk_sclc_chan_2021</b></a></td>
-      <td name="td7">msk_sclc_chan_2021</td>
+      <td name="td6"><a href="https://data.humantumoratlas.org/publications/msk_sclc_chan_2021?tab=scrna-seq" target="_blank" style="color:#020e65"><b>https://data.humantumoratlas.org/publications/msk_sclc_chan_2021?tab=scrna-seq</b></a></td>
+      <td name="td7">https://data.humantumoratlas.org/publications/msk_sclc_chan_2021?tab=scrna-seq</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">SCLC</td>
       <td name="td10">tumors, regional lymph node metastases, and distant metastases (liver, adrenal gland, axilla, and pleural effusion)</td>
@@ -1013,8 +633,8 @@ function closeSearchResults() {
       <td name="td2">2021</td>
       <td name="td3">Longitudinal profiling of respiratory and systemic immune responses reveals myeloid cell-driven lung inflammation in severe COVID-19</td>
       <td name="td4">scRNA-seq</td>
-      <td name="td6"><a href="https://www.covid19cellatlas.org/index.patient.html" target="_blank" style="color:#020e65"><b>covid19cellatlas-Farber group</b></a></td>
-      <td name="td7">covid19cellatlas-Farber group</td>
+      <td name="td6"><a href="https://www.covid19cellatlas.org/index.patient.html" target="_blank" style="color:#020e65"><b>Farber group,https://www.covid19cellatlas.org/index.patient.html</b></a></td>
+      <td name="td7">Farber group,https://www.covid19cellatlas.org/index.patient.html</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">COVID-19</td>
       <td name="td10">Airway</td>
@@ -1028,8 +648,8 @@ function closeSearchResults() {
       <td name="td2">2021</td>
       <td name="td3">Longitudinal profiling of respiratory and systemic immune responses reveals myeloid cell-driven lung inflammation in severe COVID-19</td>
       <td name="td4">scRNA-seq</td>
-      <td name="td6"><a href="https://www.covid19cellatlas.org/index.patient.html" target="_blank" style="color:#020e65"><b>covid19cellatlas-Farber group</b></a></td>
-      <td name="td7">covid19cellatlas-Farber group</td>
+      <td name="td6"><a href="https://www.covid19cellatlas.org/index.patient.html" target="_blank" style="color:#020e65"><b>Farber group,https://www.covid19cellatlas.org/index.patient.html</b></a></td>
+      <td name="td7">Farber group,https://www.covid19cellatlas.org/index.patient.html</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">COVID-19</td>
       <td name="td10">PBMC</td>
@@ -1538,8 +1158,8 @@ function closeSearchResults() {
       <td name="td2">2021</td>
       <td name="td3">Comprehensive identification of fetal cis-regulatory elements in the human genome by single-cell multi-omics analysis</td>
       <td name="td4">scRNA-seq</td>
-      <td name="td6"><a href="https://figshare.com/projects/HumanProject/122983" target="_blank" style="color:#020e65"><b>HumanProject_122983</b></a></td>
-      <td name="td7">HumanProject_122983</td>
+      <td name="td6"><a href="https://figshare.com/projects/HumanProject/122983" target="_blank" style="color:#020e65"><b>https://figshare.com/projects/HumanProject/122984</b></a></td>
+      <td name="td7">https://figshare.com/projects/HumanProject/122984</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">Unclassified</td>
       <td name="td10">Lung</td>
@@ -3114,7 +2734,7 @@ function closeSearchResults() {
       <td name="td3">Severe COVID-19 is associated with fungal colonization of the nasopharynx and potent induction of IL-17 responses in the nasal epithelium.</td>
       <td name="td4">scRNA-seq</td>
       <td name="td6"><a href="https://singlecell.broadinstitute.org/single_cell/study/SCP1289" target="_blank" style="color:#020e65"><b>SCP1289</b></a></td>
-      <td name="td7">SCP1289</td>
+      <td name="td7">https://singlecell.broadinstitute.org/single_cell/study/SCP1289</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">COVID-19</td>
       <td name="td10">Nasopharynx</td>
@@ -3129,7 +2749,7 @@ function closeSearchResults() {
       <td name="td3">ScRNA-seq expression of <i>IFI27</i> and <i>APOC2</i> identifies four alveolar macrophage superclusters in healthy BALF.</td>
       <td name="td4">scRNA-seq</td>
       <td name="td6"><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193782" target="_blank" style="color:#020e65"><b>GSE193782</b></a></td>
-      <td name="td7">PRJNA797951</td>
+      <td name="td7">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193782</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">Cystic Fibrosis</td>
       <td name="td10">Alveolar（BALF）</td>
@@ -3173,8 +2793,8 @@ function closeSearchResults() {
       <td name="td2">2021</td>
       <td name="td3">Single-cell RNA sequencing reveals distinct tumor microenvironmental patterns in lung adenocarcinoma</td>
       <td name="td4">scRNA-seq</td>
-      <td name="td6"><a href="https://codeocean.com/capsule/8321305/tree/v1" target="_blank" style="color:#020e65"><b>10.24433/CO.0121060.v1</b></a></td>
-      <td name="td7">10.24433/CO.0121060.v1</td>
+      <td name="td6"><a href="https://codeocean.com/capsule/8321305/tree/v1" target="_blank" style="color:#020e65"><b>https://codeocean.com/capsule/8321305/tree/v2</b></a></td>
+      <td name="td7">https://codeocean.com/capsule/8321305/tree/v2</td>
       <td name="td8">Homo sapiens</td>
       <td name="td9">Lung Adenocarcinoma(LUAD)</td>
       <td name="td10">Lung</td>
@@ -4064,270 +3684,7 @@ function closeSearchResults() {
       <td name="td9">Healthy</td>
       <td name="td10">Lung</td>
     </tr>
-   </tbody>
-</table>
-</div>       
-
-
-<script>
-  var tables = [];
-  var currentSheet = 'Sheet1';
-  $(document).ready(function() {
-    $.noConflict();
-    tables.push($('#cfttable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-
-    tables.push($('#rnadetable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-
-    tables.push($('#rnapretable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    tables.push($('#smtable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    tables.push($('#eletable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-
-
-    
-    tables.push($('#amintable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    tables.push($('#sugtable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    tables.push($('#tboxtable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    tables.push($('#othtable').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-      ]
-    }));
-    
-    
-    // Hide the search box for DataTables
-      $('#cfttable_filter').css('display', 'none');
-      $('#rnadetable_filter').css('display', 'none');
-      $('#rnapretable_filter').css('display', 'none');
-       $('#smtable_filter').css('display', 'none');
-      $('#eletable_filter').css('display', 'none');
-      $('#amintable_filter').css('display', 'none');
-      $('#sugtable_filter').css('display', 'none');
-      $('#tboxtable_filter').css('display', 'none');
-      $('#othtable_filter').css('display', 'none');
-    // 获取URL中的搜索参数
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchTerm = urlParams.get('search');
-      
-    // 如果有搜索词，自动填充并执行搜索
-    if (searchTerm) {
-      $('#searchBox').val(searchTerm);
-      $('#currentSearch').html(`Showing results for: <strong>${searchTerm}</strong>`);
-      performSearch(searchTerm);
-    }
-    // 搜索框输入事件
-    $('#searchBox').on('input', function() {
-      const query = $(this).val().trim();
-      if (query) {
-        $('#currentSearch').html(`Showing results for: <strong>${query}</strong>`);
-        performSearch(query);
-      } else {
-        $('#currentSearch').empty();
-        resetSearch();
-      }
-    });  
-      // Show the initial sheet (sheet1) and hide others
-    showSheet('Sheet1');
-    hideAllSheetsExcept('Sheet1');
-  });
-// 执行搜索函数
-function performSearch(query) {
-    const queryLower = query.toLowerCase();
-    
-    // 使用DataTable API搜索
-    tables[0].search(query).draw();
-    
-    // 高亮显示匹配文本
-    $('#cfttable tbody tr').each(function() {
-      const row = $(this);
-      let rowContainsMatch = false;
-      
-      row.find('td').each(function() {
-        const cell = $(this);
-        const text = cell.text();
-        const textLower = text.toLowerCase();
-        
-        if (textLower.includes(queryLower)) {
-          rowContainsMatch = true;
-          // 高亮匹配文本
-          const regex = new RegExp(query, 'gi');
-          cell.html(text.replace(regex, match => `<span class="highlight">${match}</span>`));
-        } else {
-          // 恢复原始文本
-          cell.html(text);
-        }
-      });
-      
-      // 显示/隐藏行
-      row.toggle(rowContainsMatch);
-    });
-  }
-  
-  // 重置搜索
-  function resetSearch() {
-    tables[0].search('').draw();
-    $('#cfttable tbody tr').show();
-    $('#cfttable td').each(function() {
-      const text = $(this).text();
-      $(this).html(text);
-    });
-  }
-  function sortTable(columnIndex) {
-    // TODO: Add sorting logic based on the columnIndex
-  }
-
-
-
-function downloadExcel() {
-  var selectElement = document.getElementById('downloadOptions');
-  var selectedValue = selectElement.value;
-
-  // Check if a valid option was selected
-  if (selectedValue !== '') {
-    // Create a temporary link element with the download URL
-    var link = document.createElement('a');
-    link.href = selectedValue;
-    link.download = selectedValue.split('/').pop(); // Set the filename to the last part of the URL
-    document.body.appendChild(link);
-
-    // Trigger a click event on the link to start the download
-    link.click();
-
-    // Remove the link from the DOM
-    document.body.removeChild(link);
-  }
-}
-	
-	
-	function showSheet(sheetId) {
-    // Hide the current sheet
-    if (currentSheet) {
-        var currentSheetElement = document.getElementById(currentSheet);
-        currentSheetElement.style.display = 'none';
-    }
-
-    // Show the selected sheet
-    var sheet = document.getElementById(sheetId);
-    sheet.style.display = 'block';
-
-    // Update the current sheet
-    currentSheet = sheetId;
-
-    // Get all buttons
-    var buttons = document.querySelectorAll('.button');
-
-    // Remove clicked class from all buttons
-    buttons.forEach(function(btn) {
-        btn.classList.remove('clicked');
-    });
-
-    // Add clicked class to the clicked button using event.target
-    event.target.classList.add('clicked');
-}
-
-  function hideAllSheetsExcept(sheetId) {
-    var sheets = document.getElementsByClassName('Sheet');
-    for (var i = 0; i < sheets.length; i++) {
-      var sheet = sheets[i];
-      if (sheet.id !== sheetId) {
-        sheet.style.display = 'none';
-      }
-    }
-    }
-
-    function showAllSheets() {
-      var sheets = document.getElementsByClassName('Sheet');
-      for (var i = 0; i < sheets.length; i++) {
-        sheets[i].style.display = 'block';
-      }
-    }
-
-    function searchTables() {
-      var keyword = $('#searchBox').val().toLowerCase();
-
-      tables.forEach(function(table) {
-        table.search(keyword).draw();
-      });
-      // Filter the sheets based on search results
-      filterSheets();
-    }
-
-  function filterSheets() {
-    var keyword = $('#searchBox').val().toLowerCase();
-    var sheets = document.getElementsByClassName('Sheet');
-
-    for (var i = 0; i < sheets.length; i++) {
-      var sheet = sheets[i];
-      var table = tables[i];
-
-      var displaySheet = false;
-
-      table.rows().eq(0).each(function(index) {
-        var row = table.row(index);
-        var rowData = row.data().join(' ').toLowerCase();
-        var display = rowData.includes(keyword) ? '' : 'none';
-        row.nodes().to$().css('display', display);
-
-        if (display !== 'none') {
-          displaySheet = true;
-        }
-      });
-
-      if (displaySheet) {
-        $('#' + sheet.id).show();
-      } else {
-        $('#' + sheet.id).hide();
-      }
-    }
-  }  
-  </script> 
-       
-  <style>
-  th {
-    background-color: #020e65;
-    color: white;
-    cursor: pointer; /* Add a pointer cursor to indicate sortability */
-  }
-</style>
 
             
+</table>
+    

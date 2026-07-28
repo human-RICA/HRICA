@@ -1,5 +1,5 @@
 ---
-title: "Brain Cell Atlas - Contact"
+title: "Respiratory Local Immune Cell Atlas - Contact"
 layout: gridlay
 permalink: /contact/
 ---
@@ -11,16 +11,6 @@ permalink: /contact/
 <br>
 <!-- <div class="col-lg-10 col-lg-offset-1 text-center"> -->
 <div class="col-lg-10 col-lg-offset-1 text-center">
-<h3><b>Xinyue Chen</b></h3>
-<h4><b>Guangzhou Laboratory</b></h4>
-<p>International Bio-island, <br/>
-Guangzhou, 510005, China</p>
-<ul class="list-unstyled">
-
-<a href="mailto:chen_xinyue@gzlab.ac.cn?subject=[Help]%20RCA">
-<li><i class="fa fa-envelope fa-fw"></i>chen_xinyue@gzlab.ac.cn</li></a>
-
-<br/>
 <h3><b>Ziliang Huang</b></h3>
 <h4><b>Guangzhou Laboratory</b></h4>
 <p>International Bio-island, <br/>
@@ -29,6 +19,15 @@ Guangzhou, 510005, China</p>
 <a href="mailto:huang_ziliang@gzlab.ac.cn?subject=[Help]%20RCA">
 <li><i class="fa fa-envelope fa-fw"></i> huang_ziliang@gzlab.ac.cn</li></a><div>
 <br>
+
+<h3><b>Shuo Feng</b></h3>
+<h4><b>Guangzhou Laboratory</b></h4>
+<p>International Bio-island, <br/>
+Guangzhou, 510005, China</p>
+<ul class="list-unstyled">
+<a href="mailto:fengshuo@mail.ustc.edu.cn?subject=[Help]%20RCA">
+<li><i class="fa fa-envelope fa-fw"></i>fengshuo@mail.ustc.edu.cn</li></a>
+<br/>
 
 <h3><b>Zhichao (Chichau) Miao</b></h3>
 <h4><b>Guangzhou Laboratory</b></h4>
@@ -45,7 +44,6 @@ Guangzhou, 510005, China</p>
 <div>
 <a href="https://docs.google.com/spreadsheets/d/1MnyUdtO2yXy3WoTDZlKiBMdRUiL7OgH9mc6PiWZsYDA/edit?usp=drive_link" target="_blank"><img src="{{ site.url }}{{ site.baseurl }}/images/helpPage/contact_clikme.png" alt="drawing" style="width:400px;display:block;margin:0 auto;" /></a>
 </div>
-      
 <footer>
 <p class="meta text-muted">
 

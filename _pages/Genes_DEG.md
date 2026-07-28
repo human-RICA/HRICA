@@ -1,22 +1,21 @@
 ---
-title: "Respiratory Local Immune Cell Atlas - RegionDEG"
+title: "Respiratory Local Immune Cell Atlas - DEG"
 layout: homelay
-excerpt: "Respiratory Local Immune Cell Atlas -- RegionDEG"
-permalink: /regiondeg/
+excerpt: "Respiratory Local Immune Cell Atlas -- DEG"
+permalink: /deg/
 ---
-<p class="text-center" style="color:#020e65; font-size:20px; ">The page shows the differentially expressed genes (DEGs) of cell types in a region.</p>
 <!-- <div class="container"> -->
 <!--b style="font-size: 24px; color: #BF5701">
 ATLAS
 </b-->
 <!--div class="shadow p-3 mb-5 bg-white rounded row"-->
 <!-- <p><b>Step1</b> Click below to select a target dataset for analysis.</p>
-<div class="row" style="display: flex; justify-content: space-between;"> 
+<div class="row" style="display: flex; justify-content: space-between;">
 <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Adult',this)">
 <img src="{{ site.url }}{{ site.baseurl }}/images/homePage/adult-brain.png" class="rounded-circle" />
-</div> -->
-<!-- <div>
+</div>
+<div>
 <p class="text-center" style="margin-top: 16px;">
 <b style="font-size: 24px; color: #020e65">
 ADULT BRAIN
@@ -62,6 +61,7 @@ ORGANOID
 </div>
 </div> -->
 
+
 <!--div class="col-lg-3 text-center">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Tumour',this)">
 <img src="{{ site.url }}{{ site.baseurl }}/images/homePage/airway.png" class="rounded-circle" />
@@ -74,8 +74,8 @@ ORGANOID
 </p>
 </div>
 </div-->
-
-<!-- </div>
+<!-- 
+</div>
 </div> -->
 
 
@@ -84,7 +84,6 @@ ORGANOID
         margin: 0 50px; /* 设置列之间的间距 */
     }
 </style>
-
 
 <script>
   function showImage0(photoName) {
@@ -131,24 +130,37 @@ ORGANOID
     }
 </style>
 
+<div class="container" style>
+<p class="text-left" style="color:#020e65; font-size:20px; ">The section shows the differentially expressed genes (DEGs) of regions in a cell type.</p>
 
-<div class="container" style="width: 800px">
-<p><b>Step1</b> Select the target Region.</p>
-  <b style="font-size: 24px; color: #020e65">Expression</b>
-  <div id="imageIdContainer"></div>
-  <br/>
-  <b style="font-size: 24px; color: #020e65">Region</b>
+<p><b> Select the target Cell type.</b></p>
+  <b style="font-size: 24px; color: #020e65">Celltype</b>
   <br>
   <select id="selectBox1" style="width: 400px;" onchange="handleSelectChange();displaySelectedImage()" selectedIndex="0"></select>
   <br/>
   <div id="imageContainer"></div> <!-- 新增的div用于展示图片 -->
 </div>
-<br/>
 
+<br>
+<div class="container">
+<p class="text-left" style="color:#020e65; font-size:20px; ">The section shows the differentially expressed genes (DEGs) of cell types in a region.</p>
+
+<p><b>Select the target Region.<b></p>
+  <b style="font-size: 24px; color: #020e65">Region</b>
+  <br>
+  <select id="selectBox2" style="width: 400px;" onchange="handleSelectChange();displaySelectedImage()" selectedIndex="0"></select>
+  <br/>
+  <div id="imageContainer1"></div> <!-- 新增的div用于展示图片 -->
+</div>
+<br/>
 <!-- <div id="imageIdContainer"></div> -->
 <style>
   /* 设置固定宽度 */
   #selectBox1 {
+    width: 400px; /* 这里可以根据需要调整宽度 */
+    height: 38px
+  }
+  #selectBox2 {
     width: 400px; /* 这里可以根据需要调整宽度 */
     height: 38px
   }
@@ -167,11 +179,17 @@ ORGANOID
   }
   .container {
   /* background-color: #f0f0f0; */ /* 设置背景颜色为您想要的颜色值 */
-  box-shadow: 0 0 15px grey;
+  box-shadow: 0 0 2px;
   border-radius: 10px; /* 设置边框圆角的半径，可以根据需要进行调整 */
   padding: 10px; /* 可选：添加内边距以增加内容与边框之间的间距 */
+  border: 0px;
 }
   .imageIdContainer{
+    box-shadow: 0 0 15px grey;
+    border-radius: 10px; 
+    padding: 10px; 
+  }
+  .imageIdContainer1{
     box-shadow: 0 0 15px grey;
     border-radius: 10px; 
     padding: 10px; 
@@ -180,62 +198,59 @@ ORGANOID
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var selectBox1 = document.getElementById('selectBox1');
-    var imageContainer = document.getElementById('imageContainer');
-    var imageElement = document.createElement('img');
-    imageContainer.appendChild(imageElement);  // 将图片元素添加到指定的div
+    setupImageSelection('selectBox1', 'imageContainer', 'CellTypeDEG.json', 'ByCellType', 'imageIdContainer', '80%', '100%');
+    setupImageSelection('selectBox2', 'imageContainer1', 'RegionDEG.json', 'ByRegion', 'imageIdContainer1', '80%', '100%');
 
-    // 确保选择框变化时触发 handleSelectChange 函数
-    selectBox1.addEventListener('change', function() {
-      handleSelectChange();
-      displaySelectedImage(selectBox1.value);
-    });
+    function setupImageSelection(selectBoxId, imageContainerId, dataFile, imageFolder, imageIdContainerId, width, height) {
+      var selectBox = document.getElementById(selectBoxId);
+      var imageContainer = document.getElementById(imageContainerId);
+      var imageElement = document.createElement('img');
+      imageContainer.appendChild(imageElement);
 
-    loadInitialData();
+      selectBox.addEventListener('change', function() {
+        handleSelectChange(selectBox, imageElement, imageFolder, width, height);
+      });
 
-    function loadInitialData() {
-      fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/RegionDEG.json')
+      loadInitialData(dataFile, selectBox, imageElement, imageFolder, imageIdContainerId, width, height);
+    }
+
+    function loadInitialData(dataFile, selectBox, imageElement, imageFolder, imageIdContainerId, width, height) {
+      fetch('{{ site.url }}{{ site.baseurl }}/js/genepage/' + dataFile)
         .then(response => response.json())
         .then(data => {
-          // 获取数据中的第一个键
           var firstKey = Object.keys(data)[0];
-          var options = data[firstKey] || []; // 使用空数组如果 data[firstKey] 未定义
+          var options = data[firstKey] || [];
 
-          // 更新 selectBox1 的选项
-          updateSelectBoxOptions(selectBox1, options);
+          updateSelectBoxOptions(selectBox, options);
 
           if (options.length > 0) {
-            selectBox1.selectedIndex = 0;
-            document.getElementById('imageIdContainer').textContent = 'Atlas: ' + firstKey;
-            handleSelectChange(); // 默认选中第一个选项并显示图片
-            displaySelectedImage(selectBox1.options[0].value); // 默认选中第一个选项并显示图片
+            selectBox.selectedIndex = 0;
+            document.getElementById(imageIdContainerId).textContent = 'Atlas: ' + firstKey;
+            handleSelectChange(selectBox, imageElement, imageFolder, width, height);
           }
         })
         .catch(error => {
-          console.error('Error loading RegionDEG.json:', error);
+          console.error('Error loading ' + dataFile + ':', error);
         });
     }
 
-    function handleSelectChange() {
-      var option1 = selectBox1.options[selectBox1.selectedIndex].value;
-      displaySelectedImage(option1);
+    function handleSelectChange(selectBox, imageElement, imageFolder, width, height) {
+      var selectedOption = selectBox.options[selectBox.selectedIndex].value;
+      displaySelectedImage(selectedOption, imageElement, imageFolder, width, height);
     }
 
-    function displaySelectedImage(optionValue) {
+    function displaySelectedImage(optionValue, imageElement, imageFolder, width, height) {
       if (optionValue) {
         var encodedOption = encodeURIComponent(optionValue);
-        var imageName = 'Atlas'+'_'+encodedOption + '.png'; // 假设图片名仅由选项值组成
-        var imagePath = '{{ site.url }}{{ site.baseurl }}/images/markerPage/volcano/figures/stacked_violin_/ByRegion/' + imageName;
-        
+        var imageName = 'Atlas_' + encodedOption + '.png';
+        var imagePath = 'https://data.braincellatlas.org/mock/volcano/figures/stacked_violin_/' + imageFolder + '/' + imageName;
+
         if (imageElement) {
           imageElement.src = imagePath;
-          console.log('Selected Image:', imagePath);
-          // 设置图片路径和样式
-          imageElement.src = imagePath;
-          imageElement.style.width = '100%'; // 设置宽度
-          imageElement.style.height = '100%'; // 高度自动调整
-          imageElement.style.display = 'block'; // 设置图片为块级元素
-          imageElement.style.margin = '0 auto'; // 图片居中
+          imageElement.style.width = width;
+          imageElement.style.height = height;
+          imageElement.style.display = 'block';
+          imageElement.style.margin = '0 auto';
           console.log('Selected Image:', imagePath);
         }
       } else {

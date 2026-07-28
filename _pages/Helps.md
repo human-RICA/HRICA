@@ -1,7 +1,7 @@
 ---
-title: "Brain Cell Atlas - Helps"
+title: "Respiratory Local Immune Cell Atlas - Helps"
 layout: piclay
-excerpt: "Brain Cell Atlas -- Helps"
+excerpt: "Respiratory Local Immune Cell Atlas -- Helps"
 permalink: /Helps/
 ---
 
@@ -14,15 +14,13 @@ permalink: /Helps/
 <a class="btn btn-default" href="#Dataset">Dataset</a>
 <br><br>
 
-**Brain Cell Atlas is a comprehensive and unified atlas of the brain that was built across studies, regions, diseases and sequencing platforms. We integrated the majority of the single-nuclei/single-cell transcriptomic datasets published from 2016 to present from a diverse source of human brain samples that provide a unified cell type and manually curated metadata annotated framework for brain cell research in health, disease as well as in the development.**
+**Respiratory Local Immune Cell Atlas is a comprehensive and unified atlas of the lung that was built across studies, regions and sequencing platforms. We integrated the majority of the single-nuclei/single-cell transcriptomic datasets published from 2017 to present from a diverse source of lung samples that provide a unified cell type and manually curated metadata annotated framework for lung cell research in the development.**
 
-<h1>Data Viewer</h1>
+<h1 style="background-color: #020e65; color:#ffffff;">Data Viewer</h1>
 <p id="Data Viewer"> </p>
-<br>
-<p><b>The Data Viewer may take dozens of seconds to load due to the substantial volume of data present in the Brain Cell Atlas.</p>
-<p>The Data Viewer page features the UMAP that presents the sample characteristics and gene expressions in the Brain Cell Atlas.
-From the "Data Viewer" tab, you can choose to view a particular UMAP from Adult brain, Fetal brain, Tumour, Mouse brain and Organoids.</p>
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/dataviewer_new.png" style='height: 100%; width: 100%; margin: 0;'>
+<p>The Data Viewer page features the UMAP that presents the sample characteristics and gene expressions in the Respiratory Local Immune Cell Atlas.
+From the "Data Viewer" tab, you can choose to view a particular UMAP of lung.</p>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help_dataview.png" style='height: 70%; width: 70%; margin: 0;'>
 <!-- <p>The left panel plot is a plotly.js module that displays the integrative UMAPs of the Adult Lung, Fetal Lung, Tumour and Organoids in the Respire Cell Atlas.</p>
 <img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help_figure_Dataviewer_left.png" style='height: 800px; width: auto; margin: 0;'> -->
 <p>(1) By clicking  the selection from "Cell Metadata", you can view coloured cells from a certain attribute for the cells. Several other dimiensions to view the UMAP are described as below:
@@ -63,16 +61,12 @@ Eg. 10d.</td>
       <td>Anatomical structure level 1 (Please find details in the first table of the Help Page).</td>
     </tr>
     <tr>
-      <td>subregion</td>
-      <td>Anatomical structure level 2 (Please find details in the first table of the Help Page).</td>
-    </tr>
-    <tr>
       <td>sample_status</td>
       <td>Each disease status corresponds to common names appearing in MONDO Diseased Ontology.</td>
     </tr>
     <tr>
       <td>project_code</td>
-      <td>Project codes are the data accession codes or strings of abbreviation of the study provided by the authors.
+      <td>Project codes are the data Accession_codes or strings of abbreviation of the study provided by the authors.
 Eg. GSE/SCP/E-MTAB-/PRJNA/EGAS/phs/PRJEB/SDY/SRP.</td>
      <tr>
       <td>seq_method</td>
@@ -96,17 +90,150 @@ Eg. GSE/SCP/E-MTAB-/PRJNA/EGAS/phs/PRJEB/SDY/SRP.</td>
 <p><b>(3)</b> You may download the UMAP, using selection tools to crop an area and zoom-in/out by clicking on the tool bars on the top-right of the panel (Some tools may take several seconds to load).</p> -->
 
 <br><br>
-<h1> Portrait</h1>
+<h1 style="background-color: #020e65; color:#ffffff;"> Portrait</h1>
 <p id="Portrait"> </p>
 <!-- <p class="header_box">Portrait</p> -->
-The interactive viewer shows the adult human brain and includes all the major regions from the data used in Brain Cell Atlas.
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/portrait_new.png" style='height: 100%; width: 100%; margin: 0;'>
+The interactive viewer shows the human lung and includes all the major regions from the data used in Respiratory Local Immune Cell Atlas. You can click on the relevant label and the page will direct to the data viewer page to display information about that area. 
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help_portrait.png" style='height: 100%; width: 80%; margin: 0;'>
+<style>
+  .table-custom {
+    font-size: 0.9rem; /* 调整字体大小 */
+    width: 500px; /* 调整表格宽度 */
+    height:100px
+  }
+</style>
 <table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Concrete Region</th>
+      <th>Broad Region</th>
+      <th>Anatomical Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Distal airway</td>
+      <td>Distal airway</td>
+      <td>Distal airway</td>
+    </tr>
+    <tr>
+      <td>Lung</td>
+      <td>Whole lung</td>
+      <td>Whole lung</td>
+    </tr>
+    <tr>
+      <td>Peripheral lung</td>
+      <td>Periphery</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>d_LowLeftPar</td>
+      <td>Parenchyma</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>e_TopLeftPar</td>
+      <td>Parenchyma</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>c_Bronchi.4</td>
+      <td>Bronchi</td>
+      <td>Bronchi</td>
+    </tr>
+    <tr>
+      <td>Distal lung</td>
+      <td>Distal lung</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>Whole lung</td>
+      <td>Whole lung</td>
+      <td>Whole lung</td>
+    </tr>
+    <tr>
+      <td>Right lobes</td>
+      <td>Right lobes</td>
+      <td>Right lobes</td>
+    </tr>
+    <tr>
+      <td>Middle airway</td>
+      <td>Middle airway</td>
+      <td>Middle airway</td>
+    </tr>
+    <tr>
+      <td>Proximal airway epithelium</td>
+      <td>Proximal airway</td>
+      <td>Proximal airway</td>
+    </tr>
+    <tr>
+      <td>a_Trachea</td>
+      <td>Trachea</td>
+      <td>Trachea</td>
+    </tr>
+    <tr>
+      <td>Right middle lobe</td>
+      <td>Right middle lobe</td>
+      <td>Right middle lobe</td>
+    </tr>
+    <tr>
+      <td>Left lower lobe periphery region</td>
+      <td>Periphery</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>Right upper lobe periphery region</td>
+      <td>Periphery</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>b_Bronchi.2.3</td>
+      <td>Bronchi</td>
+      <td>Primary bronchus</td>
+    </tr>
+    <tr>
+      <td>Not applicable</td>
+      <td>Trachea</td>
+      <td>Trachea</td>
+    </tr>
+    <tr>
+      <td>Proximal lung</td>
+      <td>Proximal lung</td>
+      <td>Proximal lung</td>
+    </tr>
+    <tr>
+      <td>Right upper lobe mid-bronchial region</td>
+      <td>Bronchi</td>
+      <td>Bronchi</td>
+    </tr>
+    <tr>
+      <td>Left lower lobe bronchus region</td>
+      <td>Bronchi</td>
+      <td>Bronchi</td>
+    </tr>
+    <tr>
+      <td>Left upper lobe periphery</td>
+      <td>Periphery</td>
+      <td>Bronchioles/alveoli</td>
+    </tr>
+    <tr>
+      <td>Bronchus</td>
+      <td>Bronchi</td>
+      <td>Bronchi</td>
+    </tr>
+    <tr>
+      <td>Bronchiole</td>
+      <td>Bronchiole</td>
+      <td>Bronchioles</td>
+    </tr>
+  </tbody>
+</table>
+<p>The table shows the information of regions. The Concrete Region is the original annotation of studies; the Broad Region is rough region; the Anatomical Region is the anatomical division of the region.</p> 
+<!-- <table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th>Level1</th>
       <th>Level2</th>
-      <th>Level3</th>
     </tr>
   </thead>
   <tbody>
@@ -163,14 +290,14 @@ The interactive viewer shows the adult human brain and includes all the major re
       <td></td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <p id="Genes"> </p>
 <br><br>
-<h1 ref="">Gene</h1>
+<h1 ref="" style="background-color: #020e65; color:#ffffff;">Gene</h1>
 <!-- <p class="header_box" >Gene</p> -->
-<p>Users can obtain a list of differentially expressed genes of the cell types from a selected brain region and the list is available for download in csv or pdf formats.<br>
+<p>Users can obtain a list of differentially expressed genes of the cell types from a selected lung region.<br>
 The cell type name is defined by the most scored prediced cell type computed from the 8 machine-learning-based annotation methods:</p>
 <ul>
   <li><a href="https://academic.oup.com/bioinformatics/article/36/2/533/5540320?login=false">ACTINN</a></li>
@@ -182,49 +309,45 @@ The cell type name is defined by the most scored prediced cell type computed fro
   <li><a href="https://doi.org/10.1038/s41590-018-0276-y">SingleR</a></li>
   <li>scAnnot - a hierarchical classification model trained based on scANVI.</li>
 </ul>
-<p>For example, choosing an atlas to start with (Adult is shown here), and compute for candidate markers within a specific region by selecting the tab <b>By Region</b> or find candidate markers of a cell type by selecting the tab <b>By Cell type</b>. After selection and click on the tab <b>Markers</b>, a volcano plot will be shown and list of candidate markers are listed in the table available for downlod in pdf or csv format.</p>
+<p>To calculate candidate markers within a specific region by selecting tabs <b>By Region</b> or find candidate markers of a cell type by selecting the tab <b>By Cell type</b>. After selection and click on the tab <b>Markers</b>, a volcano plot will be shown</p>
+<p>For example, if you click By Region, the search box will show the region and cell type, you can select a region and a cell type, this function is to show the differential genes of your selected cell type and other cell types under the same region, and clicking the marker button will show the volcano map and the csv table of the differential genes.</p>
 
 <!-- <div style="display: flex; justify-content: center;"> -->
 <div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_marker1.png" style='height: 100%; width: 100%; margin: 0;'>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help_gene1.png" style='height: 100%; width: 70%; margin: 0;'>
 </div>
 <div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_marker2.png" style='height: 100%; width: 100%; margin: 0;'>
-</div>
-<div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_marker4.png" style='height: 100%; width: 100%; margin: 0;'>
-</div>
-<div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_marker5.png" style='height: 100%; width: 100%; margin: 0;'>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help-gene2.png" style='height: 100%; width: 70%; margin: 0;'>
 </div>
 
-<h1>Region DEG</h1>
+<h1 style="background-color: #020e65; color:#ffffff;">Region DEG & Cell type DEG</h1>
 <p>Region DEG (Differential expression Genes) compares different cell types from the same region. A violin plot of the top 3 DEGs for each different cell types of the region will be shown after selection of the input.</p>
+<p>Cell type DEG compares the same cell type from different regions. Likewise, a violin plot of the top 3 DEGs for this cell type across different region will be shown after selection of the input.</p>
 <div style="display: flex">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_region.png" style='height: 100%; width: 100%; margin: 0;'>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help-deg.png" style='height: 100%; width: 70%; margin: 0;'>
 </div>
 
-<h1>Cell type DEG</h1>
-<p>Cell type DEG compares the same cell type from different regions. Likewise, a violin plot of the top 3 DEGs for this cell type across different region will be shown after selection of the input.</p>
-<div style="display: flex;">
+<!-- <h1>Cell type DEG</h1> -->
+
+<!-- <div style="display: flex;">
 <img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/brain_celltype.png" style='height: 100%; width: 100%; margin: 0;'>
-</div>
+</div> -->
 <p id="Exploration"> </p>
 <br><br>
-<h1>Exploration</h1>
-<p>This page present the statistics of Brain Cell Atlas with various of plots.<br>
-You can locate the relevant atlas and brain region to get summary information about the relevant resources in the Brain Cell Atlas. From the "Data Viewer" tab, you can choose a particular Atlas from Adult Brain, Fetal Brain, Tumour and Organoids. Then, select some meta information from the "Cell Metadata" tab and click on the "COMPOSITION" button to view the statistics information.</p>
+<h1 style="background-color: #020e65; color:#ffffff;">Exploration</h1>
+<p>This page present the statistics of Respiratory Local Immune Cell Atlas with various of plots.<br>
+You can locate the lung region to get summary information about the relevant resources in the Respiratory Local Immune Cell Atlas. From the "Data Viewer" tab, you can choose the Atlas from  Developmental Lung. Then, select some meta information from the "Cell Metadata" tab and click on the "COMPOSITION" button to view the statistics information. For example, in "Cell Metadata", select "donor_gender" and "donor_age", and then click "COMPOSITION" to see the gender ratio for each age.</p>
 <ul>
-  <li><b>Cell Proportion</b><br>The bar plot shows the proportion of different donor gender in the different regions. The cell types are annotated with <a href="https://github.com/rnacentre/scAnnot">scAnnot</a> and using <a href="https://www.science.org/doi/10.1126/science.add7046">(Siletti et al, 2023)</a> and <a href="https://www.biorxiv.org/content/10.1101/2022.10.24.513487v1">(Braun et al, 2022)</a> as a reference.</li>
+  <li><b>Cell Proportion</b><br>The bar plot shows the proportion of different donor gender in the different ages. The cell types are annotated with <a href="https://github.com/rnacentre/scAnnot">scAnnot</a>.</li>
 </ul>
 <div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/explore.png" style='height: 100%; width: 100%; margin: 0;'>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help_explore.png" style='height: 100%; width: 70%; margin: 0;'>
 </div>
 
 <p id="Dataset"></p>
 <br><br>
-<h1>Dataset</h1>
-<p>The Dataset page includes all the datasets used in the Brain Cell Atlas, a full list of the studies and authors from this page can be found here. Processed data with re-annotated cell type metadata will be avaiable for download upon publication.</p>
+<h1 style="background-color: #020e65; color:#ffffff;">Dataset</h1>
+<p>The Dataset page includes all the datasets used in the Respiratory Local Immune Cell Atlas, a full list of the studies and authors from this page can be found here. Processed data with re-annotated cell type metadata will be avaiable for download upon publication. All data can be downloaded by four buttons: Copy, CSV, Excel, PDF etc.</p>
 <div style="display: flex;">
-<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/dataset.png" style='height: 100%; width: 100%; margin: 0;'>
+<img src = "{{ site.url }}{{ site.baseurl }}/images/helpPage/help-dataset.png" style='height: 100%; width: 70%; margin: 0;'>
 </div>
