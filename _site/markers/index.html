@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brain Cell Atlas - Markers</title>
-  <meta name="description" content="Brain Cell Atlas -- Markers">
+  <title>Respiratory Local Immune Cell Atlas - Markers</title>
+  <meta name="description" content="Respiratory Local Immune Cell Atlas -- Markers">
   <!-- <link rel="stylesheet" href="http://localhost:4000/css/main.css"> -->
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://localhost:4000/markers/">
@@ -74,43 +74,44 @@
 	  margin-bottom: 0;
 	}
 </style> -->
+	
+	
+<!-- 首页搜索区域 -->
 
-<!-- aoying -->
 <div class="full-width-image">
-	<div class="search-box">
-	  <div class="search">
-		<h2>GZNL's Respiratory Data Centre, GZNL-RDC</h2>
-		<div class="i"><img src="http://localhost:4000/images/header/Braincellatlaslogo-黑紫色.svg">
-		  <h1>Brain Cell Atlas</h1>
-		</div>
-		<p>An atlas of brain cells</p>
-		<div class="gcse-search">
-			<input type="text" id="search-input" placeholder="Search...">
-			<button type="button" class="search-btn" onclick="search()">
-				<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-					<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-				</svg>
-			</button>
-		</div>
-		<!-- <script async src="https://cse.google.com/cse.js?cx=560632b54571a4f6c"></script>
-  
-		  <div class="gcse-search"></div> -->
-        <br/>
-		<!--p class="tip">Example searches: Lung, Nose, Airway</p-->
-		<!-- <p style="color:red; font-size:20px;">This function is under construction</p> -->
-		<p>Example: 
-		  <a class="tip" href="https://aptamer.ribocentre.org/Ribocentre-aptamer/">Limbic system</a>&nbsp;&nbsp;
-		  <a class="tip" href="https://aptamer.ribocentre.org/SELEX/">Cerebellum</a>&nbsp;&nbsp;
-		  <a class="tip" href="https://aptamer.ribocentre.org/docs/ATP-aptamer/" target="_blank">Cerebral cortex</a>&nbsp;&nbsp;
-		  <!-- <a class="tip" href="https://aptamer.ribocentre.org/structures/">Structure</a>&nbsp;&nbsp; -->
-	  </p>
-	  </div>
-	</div>
+  <div class="search-box">
+    <div class="search">
+      <h2>GZNL's Respiratory Data Centre, GZNL-RDC</h2>
+      <div class="i"><img src="/images/header/logo1.svg">
+        <h1><b>Respiratory local immune data</b></h1>
+      </div>
+      <p>Respiratory Local Immune Cell Atlas</p>
+                  
+      <!-- Google 风格搜索框 -->
+      <div class="google-search-container">
+        <div class="search-input-container">
+          <div class="search-icon" id="search-button-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#020e65" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </div>
+          <input type="text" id="search-box-header" class="google-search-input" placeholder="Search Respiratory system..."
+            aria-label="Search keywords" autocomplete="off">
+        </div>
+      </div>
+
+      <p>Example:
+        <a class="tip" href="http://localhost:4000/database?search=Lung">Lung</a>&nbsp;&nbsp;
+        <!-- <a class="tip" href="http://localhost:4000/SELEX/">SELEX</a>&nbsp;&nbsp; -->
+        <a class="tip" href="http://localhost:4000/database?search=Airway" target="_blank">Airway</a>&nbsp;&nbsp;
+        <a class="tip" href="http://localhost:4000/database?search=Trachea">Trachea</a>&nbsp;&nbsp;
+      </p>
+    </div>
   </div>
-  
-  
-  
-  
+</div>
+
   
   <style>
  .full-width-image {
@@ -121,7 +122,7 @@
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
-    background: url(http://localhost:4000/images/homePage/brain_background2.png) no-repeat;
+    background: url(http://localhost:4000/images/homePage/homepicture2.jpeg) no-repeat;
 
     background-size: cover; /* 使用 cover 让背景图片填充整个容器 */
     background-position: center; /* 让背景图片在容器中水平和垂直居中 */
@@ -154,7 +155,7 @@
   
   .search-box {
 	  height: 100%;
-	  width: 1300px;
+	  width: 1400px;
 	  margin: 0 auto;
 	  display: flex;
 	  align-items: center;
@@ -168,7 +169,11 @@
 	  background: #fff;
 	  position: absolute;
   }
-  
+ 
+  .search h1 {
+    font-size: 20px;
+  } 
+ 
   .search h2 {
 	  font-size: 20px
   }
@@ -195,119 +200,525 @@
 	  margin-top: 10px
   }
   
+  /* Google风格搜索框 */
+  .google-search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 1015; /* 适当的z-index */
+  }
+  
   .searchInput {
 	  margin-top: 10px;
 	  width: 450px;
 	  height: 32px;
 	  display: flex
   }
+ 
+  .search-input-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    height: 44px;
+  }
+
+  .search-input-container:hover,
+  .search-input-container:focus-within {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.38);
+    border-color: rgba(223, 225, 229, 0);
+  }
+
+  .search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    cursor: pointer;
+  }
+
+  .google-search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    width: 100%;
+    padding: 0 16px 0 0;
+    margin-bottom: 0;
+  }
+
+  /* 搜索结果样式 */
+  .search-results-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1020; /* 确保高于导航菜单 */
+    margin-top: 5px;
+  }
+
+  .search-results-container {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1020; /* 确保高于导航菜单 */
+    margin-top: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .search-result-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s ease;
+  }
+
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-result-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .search-result-item h4 {
+    margin: 0 0 5px 0;
+    color: #1a73e8;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .search-result-item h4 a {
+    color: #520049;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .search-result-item h4 a:hover {
+    color: #3d0037;
+    text-decoration: underline;
+  }
+
+  .search-result-item .category {
+    color: #70757a;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .search-result-item .content-preview {
+    margin: 5px 0 8px 0;
+    color: #4d5156;
+    font-size: 14px;
+    line-height: 1.58;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .search-result-item .tags {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .search-result-item .date {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .search-result-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #70757a;
+  }
+
+  .keyword-highlight {
+    background-color: #ffeaa7;
+    font-weight: bold;
+    padding: 0 2px;
+  }
+
+  .no-results-message {
+    padding: 20px;
+    text-align: center;
+    color: #4d5156;
+    font-size: 16px;
   
-  .searchInput input {
-	  flex: 1;
-	  height: 100%;
-	  line-height: 32px;
-	  border: 1px solid #868686;
-	  outline: 0;
-	  border-radius: 7px;
-	  padding: 0 10px
+    }
+    
+  /* 分页样式 */
+  .search-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    background: #f8f9fa;
+    gap: 8px;
+  }
+
+  .page-btn {
+    margin: 0;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    color: #520049;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+
+  .page-btn:hover {
+    background: #e8f0fe;
+    border-color: #520049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(82, 0, 73, 0.2);
+  }
+
+  .page-btn.active {
+    background: #520049;
+    color: white;
+    border-color: #520049;
+    box-shadow: 0 2px 8px rgba(82, 0, 73, 0.3);
+  }
+
+  .page-btn:active {
+    transform: translateY(0);
+  }
+
+  /* 搜索统计样式 */
+  .search-stats {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #6c757d;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    font-style: italic;
+  }
+
+  /* 导航栏样式 */
+  .nav-link-1 {
+    font-size: 20px !important;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 15px 15px 5px 5px;
+    line-height: 30px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-1:hover {
+    color: #520049 !important;
+    text-decoration: none;
+  }
+
+  /* 下拉菜单样式 */
+  .dropdown {
+    position: relative;
   }
   
-  .gsc-control {
-	width: 300px;
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+
+  .dropdown-toggle:focus {
+    outline: none;
   }
   
-  .gsc-control div {
-	position: static;
+  /* 修复焦点状态问题 */
+  .dropdown-toggle:not(:hover):not(.open) {
+    color: #ffffff !important;
+    background-color: transparent !important;
   }
   
-  /* Slight reset to make the preview have ample padding. */
-  .gsc-control-cse {
-	padding: 1em;
+  /* 确保按钮鼠标移走时会恢复原状 */
+  .nav-link-1:not(:hover):not(.open) {
+    color: #ffffff !important;
+    background-color: transparent !important;
   }
   
-  .gsc-control-cse,
-  .gsc-control-cse .gsc-table-result {
-	width: auto;
-	font-family: Arial, sans-serif;
-	font-size: 13px;
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s ease;
   }
   
-  .gsc-control-wrapper-cse {
-	width: 600px;
-  }
-  .gsc-search-button-v2, .gsc-search-button-v2:hover, .gsc-search-button-v2:focus {
-	  border-color: #23265F;
-	  background-color: #23265F;
-	  background-image: none;
-	  filter: none;
-	  height: 38px
+  .dropdown.open .caret {
+    transform: rotate(180deg);
   }
   
-  .gsc-control-cse, .gsc-control-cse .gsc-table-result {
-	  width: auto;
-	  font-family: Arial, sans-serif;
-	  font-size: 1px;
-  }
-  .gsc-input {
-	  font-size: 16px;
-	  color: #000000;
-  }
-  
-  /* 新的搜索框样式 */
-  .gcse-search {
-	  display: flex;
-	  align-items: center;
-	  margin: 15px 0 8px 0;
-	  width: 600px;
-  }
-  
-  .gcse-search input {
-	  flex: 1;
-	  height: 35px;
-	  padding: 0 15px;
-	  border: 1px solid #e0e0e0;
-	  font-size: 14px;
-	  outline: none;
-	  background: #fff;
-	  color: #333;
-	  transition: border-color 0.3s ease;
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 8px 0;
+    margin: 2px 0 0;
+    font-size: 16px;
+    text-align: left;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
   }
   
-  .gcse-search input:focus {
-	  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+  .dropdown.open .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
   
-  .gcse-search input::placeholder {
-	  color: #999;
-	  font-size: 13px;
+  .dropdown-menu > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+        }
+
+  .dropdown-menu > li > a:hover {
+    color: #520049;
+    background-color: #f5f5f5;
+    text-decoration: none;
+  }
+
+  /* 下拉菜单状态控制 */
+  .dropdown.open > .nav-link-1 {
+    color: #520049 !important;
+    text-decoration: none;
   }
   
-  .search-btn {
-	  width: 69px;
-	  height: 38px;
-	  margin-left: 12px;
-	  background: #23265f;
-	  border: none;
-	  color: white;
-	  cursor: pointer;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  transition: background-color 0.3s ease;
+  .dropdown:not(.open) > .nav-link-1:not(:hover) {
+    color: #ffffff !important;
+  }
+
+  /* 修复导航栏底部间距，否则这是一个默认的逻辑22px */
+  .navbar {
+    margin-bottom: 0 !important;
+}
+
+  /* Logo样式 */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
   }
   
-  .search-btn:hover {
-	  background: #343778;
+  .navbar-brand img {
+    transition: all 0.3s ease;
   }
   
-  .search-btn svg {
-	  width: 18px;
-	  height: 18px;
+  /* 响应式设计 */
+  @media (max-width: 1200px) {
+    .navbar-brand img {
+      max-height: 40px;
+    }
+    
+    .nav-link-1 {
+      font-size: 16px !important;
+      padding: 10px 8px !important;
+    }
+
+    .dropdown-menu {
+      position: static;
+      display: none;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    
+    .dropdown.open .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: none;
+    }
+    
+    .dropdown-menu > li > a {
+      padding: 8px 20px;
+      color: #ffffff;
+    }
+    
+    .dropdown-menu > li > a:hover {
+      color: #520049;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 外部导航栏响应式 */
+    .navbar-toggler.external-toggler {
+      display: block !important;
+      z-index: 1001;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 3px;
+    }
+    
+    /* 这是外部导航栏折叠按钮的样式 */
+    .external-nav {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: #333333;
+      z-index: 10000;
+      width: 200px;
+      height: auto !important;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .external-nav.show {
+      display: block;
+      position: absolute;
+      max-height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    
+    .external-nav li {
+      display: block;
+      width: 100%;
+    }
+    
+    .external-nav li a {
+      display: block !important;
+      padding: 8px 15px !important;
+      line-height: 20px !important;
+    }
+    
+    /* 内部导航栏响应式 */
+    .navbar-toggle.internal-toggler {
+      display: block !important;
+      margin-right: 0;
+      margin-top: 0;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 7px 10px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1001;
+    }
+    
+    .navbar-toggle.internal-toggler .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+    
+    #navbar-collapse-1 {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      background-color: #520049;
+      z-index: 10000;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      pointer-events: none; /* 禁用交互 */
+      visibility: hidden; /* 完全隐藏元素 */
+    }
+    
+    #navbar-collapse-1.show {
+      max-height: 500px;
+      pointer-events: auto; /* 恢复交互 */
+      visibility: visible; /* 显示元素 */
+    }
+    
+    #navbar-collapse-1 ul.navbar-nav {
+      margin: 0;
+      padding: 10px 0;
+      width: 100%;
+    }
+    
+    #navbar-collapse-1 ul.navbar-nav > li {
+      display: block;
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-brand img {
+      max-height: 35px;
+    }
+    
+    .nav-link-1 {
+      font-size: 14px !important;
+      padding: 8px 6px !important;
+    }
   }
   </style>
 
 
+  <!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-box-header');
+  const searchButton = document.getElementById('search-button-header');
 
+  // 搜索按钮点击事件
+  function handleSearchClick() {
+    const query = searchInput.value.trim();
+    if (query) {
+      // 跳转到数据库页面并传递搜索词
+      window.location.href = `http://localhost:4000/database?search=${encodeURIComponent(query)}`;
+    }
+  }
+
+  // 绑定事件
+  searchButton.addEventListener('click', handleSearchClick);
+  
+  // 回车键事件
+  searchInput.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
+  });
+});
+</script>
 
 
 
@@ -324,7 +735,7 @@
 	
     <a class="navbar-brand" href="http://localhost:4000/">
 		
-		<img class="navbar-brand" src="http://localhost:4000/images/header/brain_logo_white.svg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:2px 2px;border-radius: 0;' alt="logo">
+		<img class="navbar-brand" src="http://localhost:4000/images/header/logo2.svg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:2px 2px;border-radius: 0;' alt="logo">
 		<!--b style='font-size: 32px; color: #eeeeee;'>RespiratoryCellAtlas</b-->
 	</a>
 	</div>
@@ -332,30 +743,30 @@
 	  <ul class="nav navbar-nav navbar-right">
 		<li><a class="nav-link-1" href="http://localhost:4000/">Home</a></li>
 		<!-- <li><a class="nav-link-1" href="http://localhost:4000/dataviewer">Data Viewer</a></li> -->
-		<li class="dropdown">
+		<!-- <li class="dropdown">
 			<a href="#" class="dropdown-toggle nav-link-1" data-toggle="dropdown">
 				Data Viewer <span class="caret"></span>
-			</a>
-			<ul class="dropdown-menu">
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_adult">Adult brain</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_fetal">Fetal brain</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_tumour">Tumour</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_organoid">Organoid</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_mouse">Mouse brain</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/dataviewer_new">new DataViewer</a></li>
-			</ul>
+			</a> -->
+			<!-- <ul class="dropdown-menu">
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/dataviewer_adult">Adult brain</a></li> -->
+				<!-- <li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/dataviewer_fetal">Fetal brain</a></li>
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/dataviewer_tumour">Tumour</a></li>
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/dataviewer_organoid">Organoid</a></li>
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/dataviewer_mouse">Mouse brain</a></li> -->
+			<!-- </ul> -->
+		<li><a class="nav-link-1" href="http://localhost:4000/dataviewer_hdlc">Data Viewer</a></li>
 		<li><a class="nav-link-1" href="http://localhost:4000/portrait">Portrait</a></li>
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle nav-link-1" data-toggle="dropdown">
 				Gene <span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/markers">Markers</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/regiondeg">Region DEG</a></li>
-				<li><a class="nav-link-1" style="color: #23265F;" href="http://localhost:4000/celltypedeg">CellType DEG</a></li>
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/markers">Markers</a></li>
+				<li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/deg">DEG</a></li>
+				<!-- <li><a class="nav-link-1" style="color: #020e65;" href="http://localhost:4000/celltypedeg">CellType DEG</a></li> -->
 			</ul>
 		<!-- <li><a class="nav-link-1" href="http://localhost:4000/exploration"><b>Exploration</b></a></li> -->
-		<li><a class="nav-link-1" href="http://localhost:4000/database">Database</a></li>
+		<li><a class="nav-link-1" href="http://localhost:4000/database">Dataset</a></li>
 		<li><a class="nav-link-1" href="http://localhost:4000/Helps">Help</a></li>
 		<li><a class="nav-link-1" href="http://localhost:4000/contact">Contact</a></li>
 	  </ul>
@@ -363,26 +774,11 @@
   </div>
 </div>
 
-<script>
-  document.getElementById('search-input').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      search();
-    }
-  });
-  function search() {
-	const searchInput = document.getElementById('search-input');
-	const searchValue = searchInput.value;
-	const url = `http://localhost:4000/database?search=${searchValue}`;
-	window.location.href = url;
-  }
-</script>
-
 
     <div class="container-fluid">
       <div class="row">
           <div id="homeid" class="col-sm-12">
-	<!-- <b>The page is under maintenance</b> -->
-<html>
+	<html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
@@ -401,128 +797,100 @@
 
     <style>
 		th {
-        background-color: #23265F;
-        background-color: #23265F;
-        background-color: #23265F;
+        background-color: #020e65;
+        background-color: #020e65;
+        background-color: #020e65;
         color: rgba(255,255,255,0.9);
 		    cursor: pointer;
         }
 	</style>
 
-<div class="container">
-<!--b style="font-size: 24px;">
-ATLAS
-</b-->
-<!--div class="shadow p-3 mb-5 bg-white rounded row"-->
-<p><b>Step1</b> Click below to select a target dataset for different analysis.</p>
-<div class="row" style="display: flex; justify-content: space-between;"> <!-- 两端对齐-->
+<!-- <p class="text-center" style="color:#020e65; font-size:20px; "> (This page shows the differentially expressed genes (DEGs) according to the regions/cell types)</p> -->
+<!-- <div class="container">
+<p><b>Step1</b> Click below to select a target dataset for analysis.</p>
+<div class="row" style="display: flex; justify-content: space-between;">
 <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Adult',this)">
 <img src="http://localhost:4000/images/homePage/adult-brain.png" class="rounded-circle" />
-</div>
-<div>
+</div> -->
+<!-- <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F;">
+<b style="font-size: 24px; color: #020e65;">
 ADULT BRAIN
 </b>
 </p>
-</div>
-</div>
+</div> -->
+<!-- </div> -->
 
-<div class="col-lg-3 text-center custom-column">
+<!-- <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Fetal',this)">
 <img src="http://localhost:4000/images/homePage/fetal-brain.png" class="rounded-circle" />
 </div>
 <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F;">
+<b style="font-size: 24px; color: #020e65;">
 FETAL BRAIN
 </b>
 </p>
-</div>
-</div>
+</div> -->
+<!-- </div> -->
 
 
-<div class="col-lg-3 text-center custom-column">
+<!-- <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Tumour',this)">
 <img src="http://localhost:4000/images/homePage/tumour-brain.png" class="rounded-circle" />
-</div>
-<div>
+</div> -->
+<!-- <div>
 <p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F;">
+<b style="font-size: 24px; color: #020e65;">
 TUMOR
 </b>
 </p>
-</div>
-</div>
+</div> -->
+<!-- </div> -->
 
-<div class="col-lg-3 text-center custom-column">
+<!-- <div class="col-lg-3 text-center custom-column">
 <div class="img-circle card photo-card card-clickable" onclick="handleClick('Organoid',this)">
 <img src="http://localhost:4000/images/homePage/drganoid-brain.png" class="rounded-circle" />
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px; color: #23265F;">
+</div> -->
+<!-- <div> -->
+<!-- <p class="text-center" style="margin-top: 16px;">
+<b style="font-size: 24px; color: #020e65;">
 ORGANOID
 </b>
 </p>
+</div> -->
+<!-- </div>
 </div>
-</div>
-
-
-<!--div class="col-lg-3 text-center">
-<div class="img-circle card photo-card card-clickable" onclick="handleClick('Tumour',this)">
-<img src="http://localhost:4000/images/homePage/airway.png" class="rounded-circle" />
-</div>
-<div>
-<p class="text-center" style="margin-top: 16px;">
-<b style="font-size: 24px;">
-ORGANOID
-</b>
-</p>
-</div>
-</div-->
-
-</div>
-</div>
+</div> -->
 <br />
-<div class="container">
-<p><b>Step2</b> Click the buttons to show the differentially expressed genes (DEGs) of the target Brain Region or the target Cell type.</p>
+<div class="container" style="box-shadow: 0 0 2px;">
+<p><b>Step1</b> Click the buttons to show the differentially expressed genes (DEGs) of the target region or the target Cell type.</p>
   <button id="buttonA" onclick="changeOrder('A')">By Region</button>
   <button id="buttonB" onclick="changeOrder('B')">By Cell type</button>
 </div>
   <br />
 
-<div class="container">
-<p><b>Step3</b> Select the target Cell type/Region to show the DEGs.</p>
+<div class="container" style="box-shadow: 0 0 2px;">
+<p><b>Step2</b> Select the target Cell type/Region to show the DEGs.</p>
   <p id="sentence"></p>
-  
-  <!-- 第一层选择 -->
-  <div id="firstLevelContainer">
-    <p><b id="firstLevelLabel">Select Category:</b></p>
-    <div id="firstLevelOptions" class="selection-grid"></div>
-  </div>
-  
-  <!-- 第二层选择 -->
-  <div id="secondLevelContainer" style="display: none;">
-    <p><b id="secondLevelLabel">Select Item:</b></p>
-    <div id="secondLevelOptions" class="selection-grid"></div>
-  </div>
-  
-  <button type="button" class="btn btn-primary btn-sm" style="text-transform: capitalize; margin-top: 20px;" onclick="toggleContent();displaySelectedImage();displaySelectedTable();">Markers</button>
+  <select id="selectBox1" style="width: 200px; margin: 0 10px" onchange="handleSelectChange()"></select>
+  <select id="selectBox2" style="width: 200px; margin: 5px" onchange="handleSelectChange()"></select>
+  <!-- <button type="button" class="btn btn-primary btn-sm" onclick="toggleContent();displaySelectedImage();displaySelectedTable();">Markers</button> -->
+  <button type="button" class="btn btn-primary btn-sm" style="text-transform: capitalize;" onclick="toggleContent();displaySelectedImage();displaySelectedTable();">Markers</button>
 </div>
 <br />
 <div id="contentContainer" style="display: none;">
-<div class="container">
+<div class="container" style="box-shadow: 0 0 2px;">
 <div class="image-container">
-<b>Result1</b> Volcano Plot.
+<b>Result</b> Volcano Plot.
 <img id="selectedImage" src="" alt="Selected Image" />
 </div>
 </div>
 <br />
 <div class="container">
-<b>Result2</b> The table of DEGs.
-<div id="csvTableContainer" style="max-height: 500px; overflow-y: auto;"></div>
+<b>Result</b> The table of DEGs.
+<div id="csvTableContainer" style="max-height: 500px; overflow-y: auto; box-shadow: 0 0 2px;"></div>
 </div>
 </div>
 <script>
@@ -534,91 +902,11 @@ jQuery( document ).ready(function( $ ) {
 })
 </script>
 
-<div class="container">
-<p id="clickMessageContainer" style="display: block;">Please click</p>
+<div class="container" style="box-shadow: 0 0 2px;">
+<p id="clickMessageContainer" style="display: block;">Please click on the <b>Markers</b> button above.</p>
 </div>
 
 
-<!-- <div class="container">
-<table id="myTable" class="display table table-striped table-bordered" cellspacing="0" width="100%">
-<thead>
-  <tr>
-    <th>Year</th>
-    <th>Author</th>
-    <th>Title</th>
-    <th>Ribozyme name</th>
-    <th>Description</th>
-    <th>Journal</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>2004</td>
-    <td>Adams, P. L., M. R. Stahley, A. B. Kosek, J. Wang and S. A. Strobel </td>
-    <td>Crystal structure of a self-splicing group I intron with both exons.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Crystal structure of <em>Azoarcus</em> group I intron with both exons</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/15175762"  target="_blank" ><b> Nature 430 (6995): 45-50.</b></a></td>
-  </tr>
-  <tr>
-    <td>1989</td>
-    <td>Flor, P. J., J. B. Flanegan and T. R. Cech </td>
-    <td>A conserved base pair within helix P4 of the <em>Tetrahymena</em> ribozyme helps to form the tertiary structure required for self-splicing.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>The conserved base pair C109-G212 in P4 contributes to the tertiary structure required for self-splicing</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/2684642"  target="_blank" ><b> EMBO J 8 (11): 3391-9.</b></a></td>
-  </tr>
-  <tr>
-    <td>1982</td>
-    <td>Kruger, K., P. J. Grabowski, A. J. Zaug, J. Sands, D. E. Gottschling and T. R. Cech </td>
-    <td>Self-splicing RNA: autoexcision and autocyclization of the ribosomal RNA intervening sequence of <em>Tetrahymena</em>.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Discovery</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/6297754"  target="_blank" ><b> Cell 31 (1): 147-57.</b></a></td>
-  </tr>
-  <tr>
-    <td>1982</td>
-    <td>Davies, R. W., R. B. Waring, J. A. Ray, T. A. Brown and C. Scazzocchio </td>
-    <td>Making ends meet: a model for RNA splicing in fungal mitochondria.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Determination of shared secondary structure</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/6757759"  target="_blank" ><b> Nature 300 (5894): 719-24.</b></a></td>
-  </tr>
-  <tr>
-    <td>1986</td>
-    <td>Zaug, A. J. and T. R. Cech </td>
-    <td>The intervening sequence RNA of <em>Tetrahymena</em> is an enzyme.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>The intervening sequence RNA of <em>Tetrahymena</em> is an enzyme</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/3941911"  target="_blank" ><b> Science 231 (4737): 470-5.</b></a></td>
-  </tr>
-  <tr>
-    <td>1988</td>
-    <td>Price, J. V. and T. R. Cech </td>
-    <td>Determinants of the 3' splice site for self-splicing of the <em>Tetrahymena</em> pre-rRNA.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>ωG is closely related to the choice of 3' splice site</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/3209068"  target="_blank" ><b> Genes Dev 2 (11): 1439-47.</b></a></td>
-  </tr>
-  <tr>
-    <td>1990</td>
-    <td>Michel, F. and E. Westhof </td>
-    <td>Modelling of the three-dimensional architecture of group I catalytic introns based on comparative sequence analysis.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>3D models of  group I intron based on comparative sequence analysis</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/2258934"  target="_blank" ><b> J Mol Biol 216 (3): 585-610.</b></a></td>
-  </tr>
-  <tr>
-    <td>1996</td>
-    <td>Cate, J. H., A. R. Gooding, E. Podell, K. Zhou, B. L. Golden, C. E. Kundrot, T. R. Cech and J. A. Doudna </td>
-    <td>Crystal structure of a group I ribozyme domain: principles of RNA packing.</td>
-    <td><a href="https://www.ribocentre.org/docs/groupI.html"  target="_blank" ><b> Group I self-splicing intron</b></a></td>
-    <td>Crystal structure of <em>Tetrahymena</em> P4-P6 domain</td>
-    <td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/8781224"  target="_blank" ><b> Science 273 (5282): 1678-85.</b></a></td>
-  </tr>
-</tbody>
-</table>
- -->
 <style>
     .custom-column {
         margin: 0 50px; /* 设置列之间的间距 */
@@ -645,8 +933,13 @@ jQuery( document ).ready(function( $ ) {
 
 
 <style>
+   /* 设置固定宽度 */
+  #selectBox1, #selectBox2 {
+    width: 400px; /* 这里可以根据需要调整宽度 */
+    height: 38px
+  }
   .active {
-    background-color: #23265F; 
+    background-color: #020e65; 
     color: white;
   }
   .image-container {
@@ -678,62 +971,49 @@ jQuery( document ).ready(function( $ ) {
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 <div id="csvTableContainer"></div>
 <script>
-  var imageLoaded = ''; // 添加一个全局变量用于跟踪图片加载状态
-  var selectedImageId = null;
-  var selectedOptions = [];
-  var selectedButton = null;
-  var originalOrder = true;
-  var clickedCard = null;
-  var firstLevelSelected = null;
-  var secondLevelSelected = null;
-  var currentDataset = null;
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   var adultButton = document.querySelector('.col-lg-3:nth-child(1) .card-clickable');
-  //   adultButton.click();
-  // });
-  function handleClick(imageId,card) {
-    if (clickedCard !== null) {
-    clickedCard.classList.remove("clicked");
-  }
-    card.classList.add("clicked");
-    clickedCard = card;
-    selectedImageId = imageId;
-    selectedOptions = [];
-    firstLevelSelected = null;
-    secondLevelSelected = null;
-    
-    // 根据Step2选择的按钮类型加载相应数据文件
-    var dataFile = '';
-    if (selectedButton === 'A') {
-      dataFile = 'region.json';  // By Region
-    } else if (selectedButton === 'B') {
-      dataFile = 'cellType.json';  // By Cell type
-    }
-    
-    if (dataFile) {
-      fetch('http://localhost:4000/js/genepage/' + dataFile)
+  var selectBox1 = document.getElementById('selectBox1');
+  var selectBox2 = document.getElementById('selectBox2');
+  document.addEventListener('DOMContentLoaded', function() {
+    loadInitialData();
+  });
+  function loadInitialData() {
+    // 加载 RegionDEG.json 并填充 selectBox1
+    fetch('http://localhost:4000/js/genepage/RegionDEG.json')
       .then(response => response.json())
       .then(data => {
-          // 根据Step1选择的imageId获取对应的数据集
-          currentDataset = data[imageId];  // 例如：data['Adult'] 或 data['Fetal']
-          if (currentDataset) {
-            // 获取当前数据集的所有keys（第一层选择）
-            var keys = Object.keys(currentDataset);
-            displayFirstLevelOptions(keys, selectedButton === 'A' ? 'regions' : 'cellTypes');
-            // 隐藏第二层选择
-            document.getElementById('secondLevelContainer').style.display = 'none';
-          }
+        // 假设我们只关心第一个键的值
+        var firstKey = Object.keys(data)[0];
+        var options = data[firstKey] || []; // 使用空数组如果 data[firstKey] 未定义
+        updateSelectBoxOptions('selectBox1', options);
+        handleSelectChange(); // 确保选中第一个选项
       })
       .catch(error => {
-          console.error('Error loading data from ' + dataFile + ':', error);
-        });
-    }
-    resetDisplay();
+        console.error('Error loading RegionDEG.json:', error);
+      });
+    // 加载 CellTypeDEG.json 并填充 selectBox2
+    fetch('http://localhost:4000/js/genepage/CellTypeDEG.json')
+      .then(response => response.json())
+      .then(data => {
+        // 假设我们只关心第一个键的值
+        var firstKey = Object.keys(data)[0];
+        var options = data[firstKey] || []; // 使用空数组如果 data[firstKey] 未定义
+        updateSelectBoxOptions('selectBox2', options);
+        handleSelectChange(); // 确保选中第一个选项
+      })
+      .catch(error => {
+        console.error('Error loading CellTypeDEG.json:', error);
+      });
+    displaySelectedImage();
   }
   function handleSelectChange() {
-    // 这个函数现在由新的选择界面处理
-    // selectedOptions 已经在 selectFirstLevel 和 selectSecondLevel 中更新
-    console.log('Current selection:', selectedOptions);
+    var selectBox1 = document.getElementById('selectBox1');
+    var selectBox2 = document.getElementById('selectBox2');
+    var option1 = selectBox1.options[selectBox1.selectedIndex].value;
+    var option2 = selectBox2.options[selectBox2.selectedIndex].value;
+    selectedOptions = [option1, option2];
+    resetDisplay();
+    displaySelectedImage();
+    displaySelectedTable();
   }
   function resetDisplay() {
       var contentContainer = document.getElementById('contentContainer');
@@ -742,22 +1022,23 @@ jQuery( document ).ready(function( $ ) {
       clickMessageContainer.style.display = 'block';
     }
 function displaySelectedImage() {
-  if (selectedImageId !== null && selectedOptions.length === 2 && selectedOptions[0] && selectedOptions[1]) {
-    var imageName;
+  if (selectedOptions.length === 2) {
+    var imageName = 'Atlas' + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '.png';
+    var imagePath;
     if (selectedButton === 'A') {
-      imageName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '.png';
-    var imagePath = 'https://data.braincellatlas.org/volcano/VolcanoByRegion/' + imageName;
+      imagePath = 'https://data.braincellatlas.org/mock/volcano/markers/ByRegion/Volcano/png/' + imageName;
     } else if (selectedButton === 'B') {
-      imageName = selectedImageId + '_' + encodeURIComponent(selectedOptions[1]) + '_' + encodeURIComponent(selectedOptions[0]) + '.png';
-    var imagePath = 'https://data.braincellatlas.org/volcano/VolcanoByCellType/' + imageName;
+      imagePath = 'https://data.braincellatlas.org/mock/volcano/markers/ByCellType/Volcano/png/' + imageName;
+    } else {
+      console.error('Invalid button selection:', selectedButton);
+      return; // 退出函数
     }
     console.log('Image path:', imagePath); // 调试信息
-    /* var imagePath = 'http://localhost:4000/images/markerPage/volcano/' + imageName; */
-    // 在此处显示照片，例如：
     var imageElement = document.getElementById('selectedImage');
     if (imageElement) {
+      // 处理图片加载成功
       imageElement.onload = function() {
-        // 图片加载成功时，清除错误消息
+        console.log('Image loaded successfully:', imagePath);
         var errorMessage = document.getElementById('errorMessage');
         if (errorMessage) {
           errorMessage.remove();
@@ -769,31 +1050,34 @@ function displaySelectedImage() {
         console.error('Failed to load image:', imagePath);
         imageElement.src = ''; // 清空src属性
         imageElement.alt = '';
-        // 显示错误消息
-        var errorMessage = document.getElementById('errorMessage');
-        if (!errorMessage) {
-          errorMessage = document.createElement('div');
-          errorMessage.id = 'errorMessage';
-          errorMessage.textContent = 'No figure to show';
-          errorMessage.style.textAlign = 'center';
-          imageElement.parentNode.insertBefore(errorMessage, imageElement.nextSibling);
-        }
+        displayErrorMessage('No region or cell type in this dataset');
         imageLoaded = false; // 图片加载失败
       };
-    imageElement.src = imagePath;
-    imageElement.style.width = '500px';  // 设置宽度
-    imageElement.style.height = 'auto';  // 高度自动调整
-    // 设置图片居中
-    imageElement.style.display = 'block';
-    imageElement.style.margin = '0 auto';
-    console.log('Selected Image:', imagePath);
+      // 设置图片路径和样式
+      imageElement.src = imagePath;
+      imageElement.style.width = '500px'; // 设置宽度
+      imageElement.style.height = 'auto'; // 高度自动调整
+      imageElement.style.display = 'block'; // 设置图片为块级元素
+      imageElement.style.margin = '0 auto'; // 图片居中
+    } else {
+      console.error('Element with id "selectedImage" not found.');
+    }
   } else {
-    console.error('Element with id "selectedImage" not found.');
+    console.log('Please select the necessary options.');
+    hideTableAndShowMessage(); // 当没有图片展示时，隐藏表格并显示 "No table" 消息
   }
+}
+function displayErrorMessage(message) {
+  var imageElement = document.getElementById('selectedImage');
+  var errorMessage = document.getElementById('errorMessage');
+  if (!errorMessage) {
+    errorMessage = document.createElement('div');
+    errorMessage.id = 'errorMessage';
+    errorMessage.textContent = message;
+    errorMessage.style.textAlign = 'center';
+    imageElement.parentNode.insertBefore(errorMessage, imageElement.nextSibling);
   } else {
-    console.log('Please select an image and options.');
-    // 当没有图片展示时，隐藏表格并显示 "No table" 消息
-    hideTableAndShowMessage();
+    errorMessage.textContent = message;
   }
 }
 function hideTableAndShowMessage() {
@@ -804,7 +1088,7 @@ function hideTableAndShowMessage() {
   if (!noTableMessage) {
     noTableMessage = document.createElement('div');
     noTableMessage.id = 'noTableMessage';
-    noTableMessage.textContent = 'No table to show';
+    noTableMessage.textContent = 'No the region or cell type in this dataset';
     noTableMessage.style.textAlign = 'center';
     tableContainer.appendChild(noTableMessage);
   }
@@ -836,15 +1120,16 @@ function displaySelectedTable() {
     hideTableAndShowMessage();
     return;
   }
-  if (selectedImageId !== null && selectedOptions.length === 2 && selectedOptions[0] && selectedOptions[1]) {
+  if (selectedOptions.length === 2) {
     var tableName;
     var tablePath;
+    // 根据 selectedButton 来生成表格文件名和路径
     if (selectedButton === 'A') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '_cell_type.csv';
-      tablePath = 'https://data.braincellatlas.org/markersByRegion/' + tableName;
+      tableName = 'Atlas' + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '_cell_type.csv';
+      tablePath = 'https://data.braincellatlas.org/mock/volcano/ByRegion/' + tableName;
     } else if (selectedButton === 'B') {
-      tableName = selectedImageId + '_' + encodeURIComponent(selectedOptions[1]) + '_' + encodeURIComponent(selectedOptions[0]) + '_cell_type.csv';
-      tablePath = 'https://data.braincellatlas.org/markersByCellType/' + tableName;
+      tableName = 'Atlas' + '_' + encodeURIComponent(selectedOptions[0]) + '_' + encodeURIComponent(selectedOptions[1]) + '_cell_type.csv';
+      tablePath = 'https://data.braincellatlas.org/mock/volcano/ByCellType/' + tableName;
     } else {
       console.log('Please select an image and options.');
       hideTableAndShowMessage(); // 结束函数的执行，并显示 "No table" 消息
@@ -859,9 +1144,9 @@ function displaySelectedTable() {
         console.log('CSV Data:', csvData);
         // 检查是否有 "No figure to show" 消息
         var errorMessage = document.getElementById('errorMessage');
-        if (errorMessage && errorMessage.textContent === 'No figure to show') {
-          hideTableAndShowMessage(); // 当没有图片展示时，隐藏表格并显示 "No table" 消息
-          return; // 结束函数的执行
+        if (errorMessage && errorMessage.textContent === 'No the region or cell type in this dataset') {
+          hideTableAndShowMessage(); // 隐藏表格并显示 "No table" 消息
+          return;
         }
         var tableContainer = document.getElementById('csvTableContainer');
         // 解析 CSV 数据
@@ -873,8 +1158,6 @@ function displaySelectedTable() {
             <th>avg_log2FC</th>
             <th>p_val</th>
             <th>p_val_adj</th>
-            <th>pct.1</th>
-            <th>pct.2</th>
         </tr>
         </thead>
         <tbody>`;
@@ -883,9 +1166,9 @@ function displaySelectedTable() {
           var cells = rows[i].split(',');
           tableHtml += '<tr>';
           for (var j = 0; j < cells.length; j++) {
-              // 去掉每个单元格内容的引号
-              var cellContent = cells[j].replace(/^"(.*)"$/, '$1');
-              tableHtml += '<td>' + cellContent + '</td>';
+            // 去掉每个单元格内容的引号
+            var cellContent = cells[j].replace(/^"(.*)"$/, '$1');
+            tableHtml += '<td>' + cellContent + '</td>';
           }
           tableHtml += '</tr>';
         }
@@ -903,8 +1186,8 @@ function displaySelectedTable() {
     };
     xhr.send();
   } else {
-    console.log('Please select an image and options.');
-    hideTableAndShowMessage(); // 结束函数的执行，并显示 "No table" 消息
+    console.log('Please select the necessary options.');
+    hideTableAndShowMessage(); // 隐藏表格并显示 "No table" 消息
   }
 }
 jQuery( document ).ready(function( $ ) {
@@ -930,197 +1213,24 @@ function clearTableAndMessage() {
   if (!noTableMessage) {
     noTableMessage = document.createElement('div');
     noTableMessage.id = 'noTableMessage';
-    noTableMessage.textContent = 'No table to show';
+    noTableMessage.textContent = 'No the region or cell type in this dataset';
     noTableMessage.style.textAlign = 'center';
     tableContainer.appendChild(noTableMessage);
   }
 }
-  // 显示第一层选择选项
-  function displayFirstLevelOptions(options, type) {
-    var container = document.getElementById('firstLevelOptions');
-    var firstLevelLabel = document.getElementById('firstLevelLabel');
-    var secondLevelLabel = document.getElementById('secondLevelLabel');
-    
-    // 更新标签文本
-    if (selectedButton === 'A') {
-      // By Region
-      firstLevelLabel.textContent = 'Select Region:';
-      secondLevelLabel.textContent = 'Select Cell Type:';
-    } else if (selectedButton === 'B') {
-      // By Cell type
-      firstLevelLabel.textContent = 'Select Cell Type:';
-      secondLevelLabel.textContent = 'Select Region:';
+function updateSelectBoxOptions(selectBoxId, options) {
+    var selectBox = document.getElementById(selectBoxId);
+    selectBox.innerHTML = generateOptionsHtml(options);
+    if (options.length > 0) {
+        selectBox.value = options[0]; // 默认选中第一个选项
     }
-    
-    container.innerHTML = '';
-    
-    options.forEach(function(option, index) {
-      var item = document.createElement('div');
-      
-      // 判断当前显示的是什么类型的选项
-      var currentType = selectedButton === 'A' ? 'region' : 'celltype';
-      
-      // 根据类型决定显示方式
-      if (currentType === 'celltype') {
-        // Cell Type 使用图片显示（卡片式）
-        item.className = 'selection-item-card';
-        
-        // 创建图标容器
-        var iconDiv = document.createElement('div');
-        iconDiv.className = 'selection-icon';
-        iconDiv.innerHTML = getIconForOption(option, 'celltype');
-        
-        // 创建文字标签
-        var labelDiv = document.createElement('div');
-        labelDiv.className = 'selection-label';
-        labelDiv.textContent = option;
-        
-        item.appendChild(iconDiv);
-        item.appendChild(labelDiv);
-      } else {
-        // Region 使用方框显示
-        item.className = 'selection-item';
-        item.textContent = option;
-      }
-      
-      item.onclick = function() {
-        selectFirstLevel(option, item);
-      };
-      
-      container.appendChild(item);
-      
-      // 默认选中第一个选项
-      if (index === 0) {
-        setTimeout(function() {
-          selectFirstLevel(option, item);
-        }, 100);
-      }
-    });
-  }
-  
-  // 获取选项对应的图标
-  function getIconForOption(option, type) {
-    if (type === 'celltype') {
-      // Cell Type 始终使用图片显示
-      var imagePath = 'http://localhost:4000/assets/celltype/' + encodeURIComponent(option) + '.png';
-      
-      return '<div style="width: 60px; height: 60px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">' + 
-             '<img src="' + imagePath + '" alt="' + option + '" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display=\'none\'; this.parentNode.innerHTML=\'' + option.substring(0, 2).toUpperCase() + '\';" />' +
-             '</div>';
-    } else {
-      // Region 始终使用方框形式显示（文字缩写）
-      return '<div style="width: 60px; height: 60px; border-radius: 50%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; color: #333;">' + 
-             option.substring(0, 2).toUpperCase() +
-             '</div>';
-    }
-  }
-
-  // 显示第二层选择选项
-  function displaySecondLevelOptions(options) {
-    var container = document.getElementById('secondLevelOptions');
-    container.innerHTML = '';
-    
-    // 判断第二层显示的是什么类型
-    var secondLevelType = selectedButton === 'A' ? 'celltype' : 'region';
-    
-    options.forEach(function(option, index) {
-      var item = document.createElement('div');
-      
-      // 根据类型决定显示方式
-      if (secondLevelType === 'celltype') {
-        // Cell Type 使用图片显示（卡片式）
-        item.className = 'selection-item-card';
-        
-        // 创建图标容器
-        var iconDiv = document.createElement('div');
-        iconDiv.className = 'selection-icon';
-        iconDiv.innerHTML = getIconForOption(option, 'celltype');
-        
-        // 创建文字标签
-        var labelDiv = document.createElement('div');
-        labelDiv.className = 'selection-label';
-        labelDiv.textContent = option;
-        
-        item.appendChild(iconDiv);
-        item.appendChild(labelDiv);
-      } else {
-        // Region 使用方框显示
-        item.className = 'selection-item';
-        item.textContent = option;
-      }
-      
-      item.onclick = function() {
-        selectSecondLevel(option, item);
-      };
-      container.appendChild(item);
-      
-      // 默认选中第一个选项
-      if (index === 0) {
-        setTimeout(function() {
-          selectSecondLevel(option, item);
-        }, 150);
-      }
-    });
-    
-    // 显示第二层容器
-    document.getElementById('secondLevelContainer').style.display = 'block';
-  }
-  
-  // 选择第一层选项
-  function selectFirstLevel(option, element) {
-    // 清除之前的选择（需要处理两种类型的选择项）
-    var cardItems = document.querySelectorAll('#firstLevelOptions .selection-item-card');
-    var normalItems = document.querySelectorAll('#firstLevelOptions .selection-item');
-    
-    cardItems.forEach(function(item) {
-      item.classList.remove('selected');
-    });
-    normalItems.forEach(function(item) {
-      item.classList.remove('selected');
-    });
-    
-    // 选择当前项
-    element.classList.add('selected');
-    firstLevelSelected = option;
-    
-    // 显示第二层选项
-    if (currentDataset && currentDataset[option]) {
-      displaySecondLevelOptions(currentDataset[option]);
-    }
-    
-    // 重置第二层选择
-    secondLevelSelected = null;
-    selectedOptions = [firstLevelSelected, secondLevelSelected];
-  }
-  
-  // 选择第二层选项
-  function selectSecondLevel(option, element) {
-    // 清除之前的选择（需要处理两种类型的选择项）
-    var cardItems = document.querySelectorAll('#secondLevelOptions .selection-item-card');
-    var normalItems = document.querySelectorAll('#secondLevelOptions .selection-item');
-    
-    cardItems.forEach(function(item) {
-      item.classList.remove('selected');
-    });
-    normalItems.forEach(function(item) {
-      item.classList.remove('selected');
-    });
-    
-    // 选择当前项
-    element.classList.add('selected');
-    secondLevelSelected = option;
-    
-    // 更新selectedOptions
-    selectedOptions = [firstLevelSelected, secondLevelSelected];
-  }
-  
-  function updateSelectBoxOptions(selectBoxId, options) {
-    // 这个函数保留以防其他地方还在使用
-    console.log('updateSelectBoxOptions is deprecated, using new selection interface');
   }
   function generateOptionsHtml(options) {
-    // 这个函数保留以防其他地方还在使用
-    return '';
+    var optionsHtml = '';
+    for (var i = 0; i < options.length; i++) {
+      optionsHtml += '<option value="' + options[i] + '">' + options[i] + '</option>';
+    }
+    return optionsHtml;
   }
 document.addEventListener('DOMContentLoaded', function() {
     var buttonA = document.getElementById('buttonA');
@@ -1139,38 +1249,27 @@ document.addEventListener('DOMContentLoaded', function() {
       buttonA.classList.add('active');
       buttonB.classList.remove('active');
       activeButton = buttonA;
-      sentenceElement.innerHTML = 'Search for <b>differentially expressed genes (DEGs)</b> of selected cell type compared to others in the selected respiratory system region.';
+      sentenceElement.innerHTML = 'Search for <b>differentially expressed genes (DEGs)</b> of selected cell type compared to others in the selected region.';
       selectedButton = button;
       originalOrder = true;
       resetSelectBoxes();
-      // 如果已经选择了数据集，重新加载对应数据
-      if (selectedImageId && clickedCard) {
-        handleClick(selectedImageId, clickedCard);
-      }
     } else if (button === 'B') {
       buttonA.classList.remove('active');
       buttonB.classList.add('active');
       activeButton = buttonB;
-      sentenceElement.innerHTML = 'Search for <b>differentially expressed genes (DEGs)</b> of selected respiratory system region compared to others in the selected cell type.';
+      sentenceElement.innerHTML = 'Search for <b>differentially expressed genes (DEGs)</b> of selected region compared to others in the selected cell type.';
       selectedButton = button;
       originalOrder = false;
       resetSelectBoxes();
       resetDisplay();
-      // 如果已经选择了数据集，重新加载对应数据
-      if (selectedImageId && clickedCard) {
-        handleClick(selectedImageId, clickedCard);
-      }
     }
  }   
   function resetSelectBoxes() {
-    // 清空选择界面
-    document.getElementById('firstLevelOptions').innerHTML = '';
-    document.getElementById('secondLevelOptions').innerHTML = '';
-    document.getElementById('secondLevelContainer').style.display = 'none';
-    firstLevelSelected = null;
-    secondLevelSelected = null;
-    selectedOptions = [];
-    currentDataset = null;
+    if (originalOrder) {
+      selectBox1.parentNode.insertBefore(selectBox1, selectBox2);
+    } else {
+      selectBox2.parentNode.insertBefore(selectBox2, selectBox1);
+    }
   }
   function toggleContent() {
     var contentContainer = document.getElementById('contentContainer');
@@ -1218,7 +1317,7 @@ function showImage0(photoName) {
   }
   .container {
   /* background-color: #f0f0f0; */ /* 设置背景颜色为您想要的颜色值 */
-  box-shadow: 0 0 15px grey;
+  box-shadow: 0 0 2px grey;
   border-radius: 10px; /* 设置边框圆角的半径，可以根据需要进行调整 */
   padding: 10px; /* 可选：添加内边距以增加内容与边框之间的间距 */
 }
@@ -1230,12 +1329,12 @@ function showImage0(photoName) {
       height: 38px; /* Set button height */
       /* cursor: pointer;
       border: none;
-      background-color: #23265F; /* Change background color */
+      background-color: #020e65; /* Change background color */
       /* color: white; Change text color */
       /* border-radius: 5px; Add border radius  */
     }
     /* #buttonA:hover, #buttonB:hover {
-      background-color: #23265F; Change background color on hover */
+      background-color: #020e65; Change background color on hover */
     /* } */
 </style>
 <style>
@@ -1262,7 +1361,7 @@ function showImage0(photoName) {
         transition: transform 0.3s;
     }
     .photo-card.clicked {
-        border-color: #23265F;
+        border-color: #020e65;
     }
 </style>
 </body>
@@ -1270,92 +1369,6 @@ function showImage0(photoName) {
     .btn-primary {
       font-weight: normal; /* 确保文本不加粗 */
       font-size: 17px;    /* 设置文本字体大小 */
-    }
-    
-    /* 选择网格样式 */
-    .selection-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 20px 0;
-    }
-    
-    /* 卡片式选择项（第一层） */
-    .selection-item-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      background-color: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 120px;
-      max-width: 140px;
-    }
-    
-    .selection-item-card:hover {
-      transform: translateY(-2px);
-    }
-    
-    .selection-item-card.selected {
-      /* 选中状态不改变背景 */
-    }
-    
-    .selection-icon {
-      margin-bottom: 10px;
-    }
-    
-    /* 选中状态的圆形图标边框 */
-    .selection-item-card.selected .selection-icon > div {
-      border: 3px solid #23265F !important;
-    }
-    
-    .selection-label {
-      font-size: 12px;
-      font-weight: 500;
-      text-align: center;
-      color: #333;
-      line-height: 1.2;
-    }
-    
-    .selection-item-card.selected .selection-label {
-      color: #23265F;
-      font-weight: 600;
-    }
-    
-    /* 普通选择项（第二层） */
-    .selection-item {
-      padding: 10px 15px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      background-color: #f9f9f9;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 14px;
-      text-align: center;
-      min-width: 120px;
-    }
-    
-    .selection-item:hover {
-      border-color: #23265F;
-      background-color: #e8e8e8;
-    }
-    
-    .selection-item.selected {
-      border-color: #23265F;
-      background-color: #23265F;
-      color: white;
-      font-weight: bold;
-    }
-    
-    #firstLevelContainer, #secondLevelContainer {
-      margin: 20px 0;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #fafafa;
     }
   </style>
 </html>
@@ -1373,21 +1386,21 @@ function showImage0(photoName) {
 		<div class="col-sm-4">
 			
 		  <p>&copy 2024 GZNL-RDC. </p>
-		  <p>We are part of the <a href="https://gzlab.ac.cn" style="color:#508CF4">Guangzhou Laboratory</a> and <a href="http://www.rnacentre.org/" style="color:#508CF4">RNAcentre</a>.</p>
-		  <p>Site made with <a href="https://jekyllrb.com" style="color:#508CF4">Jekyll</a>;  <a href="http://localhost:4000/aboutwebsite.html" style="color:#508CF4">copy and  modify it for your own research group.</a></p>
+		  <p>We are part of the <a href="https://gzlab.ac.cn" style="color:#020e65">Guangzhou Laboratory</a> and <a href="http://www.rnacentre.org/" style="color:#020e65">RNAcentre</a>.</p>
+		  <p>Site made with <a href="https://jekyllrb.com" style="color:#020e65">Jekyll</a>;  <a href="http://localhost:4000/aboutwebsite.html" style="color:#020e65">copy and  modify it for your own research group.</a></p>
 		  <p>  </p>
 		  <p>  </p>
 		</div>
 		
 		<div class="col-sm-4">
 		  Funding:<br />
-          - <a href="https://gzlab.ac.cn" style="color:#508CF4">R&D Programs of Guangzhou Laboratory</a><br />
-          - <a href="http://www.most.gov.cn/" style="color:#508CF4">MOST IT+BT projects</a> <br />
-          - <a href="https://www.nsfc.gov.cn/" style="color:#508CF4">NSFC</a> <br />	 
+          - <a href="https://gzlab.ac.cn" style="color:#020e65">R&D Programs of Guangzhou Laboratory</a><br />
+          - <a href="http://www.most.gov.cn/" style="color:#020e65">MOST IT+BT projects</a> <br />
+          - <a href="https://www.nsfc.gov.cn/" style="color:#020e65">NSFC</a> <br />	 
 		  <br>
-		  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" style="color:#508CF4"></script>
+		  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" style="color:#020e65"></script>
 		  <!--<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_uv"><strong>: <a href=""><span id="busuanzi_value_site_uv"></span></strong></a> </span> &nbsp;&nbsp;
-		  !--><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_pv">: <a href="" style="color:#508CF4"><span id="busuanzi_value_site_pv"></span></a> </span> 
+		  !--><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_pv">: <a href="" style="color:#020e65"><span id="busuanzi_value_site_pv"></span></a> </span> 
 		</div>
 		
 		<div class="col-sm-4">
@@ -1395,7 +1408,7 @@ function showImage0(photoName) {
 		  Building B2, Guangzhou National Laboratory<br />
 		  96 Xingdao South Road, Guangzhou International Bio Island, <br />
 		  Haizhu District, Guangzhou, Guangdong, China.<br />
-          (<a href="https://goo.gl/maps/hDLr6siEAS2Eaypt8" style="color:#508CF4">Maps</a>)
+          (<a href="https://goo.gl/maps/hDLr6siEAS2Eaypt8" style="color:#020e65">Maps</a>)
 		</div>
 	  </div>
 	</div>
